@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <style>
+        body{
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+        #heading{
+            text-align: center;
+        }
+        .nav{
+           width: 100%;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+        border:1px solid black;
+        }
+        .nav img{
+            width:100%;
+        }
+        .nav div{
+            border: 1px solid black;
+            display: flex;
+            height: 40px;
+           
+        }
+        .categories{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .footer{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+        }
+        .footer>div{
+            width:30%;
+        }
+        #contactlogos{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #contactlogos>div{
+            width:10%;
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+        #contactlogos img{
+            width:100%;
+            height:30px;
+        }
+        .socials{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .socials>div{
+            width:2%;
+            margin-right: 20px;
+        }
+        .socials img{
+            width: 100%;
+        }
+        .payments{
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .payments>div{
+            width: 30%;
+        }
+        #store{
+            border:1px solid black;
+        }
+        .visa{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .visa >div{
+            width:10%;
+        }
+        .visa img{
+            width: 100%;
+        }
+        .dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+    </style>
+</head>
+<body>
+    
+        <div id="heading">
+            <h6>Aurum Jewels- A Tanishq Partnership</h6> <!--change tagline-->
+            </div>
+        <div class="nav">
+            <div id="logo">
+                <!--image here-->
+            </div>
+            <div>
+                <p>FREE TRY AT HOME</p>
+            </div>
+            <div>
+                <p>FIND STORE</p>
+            </div>
+            <div>
+                <p>PLAN OF PURCHASE</p>
+            </div>
+            <div>
+               <p> BUY DIGITAL GOLD </p>
+            </div>
+            <div id="search-container">
+                <form>
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                  </form>
+            </div>
+            <div>
+                <p>PINCODE</p>
+            </div>
+            <div>
+                <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="error">
+                <a href="" id="signup" style="display:none">Sign up</a>
+                <a href="" id="login" style="display: none;">Log In</a>
+            </div>
+            <div>
+                <img src="https://cdn-icons-png.flaticon.com/128/2767/2767003.png" alt="error">
+            </div>
+            <div>
+                <img src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png" alt="error">
+            </div>
+        </div>
+    <div class="categories">
+        <div><p>NEW ARRIVALS</p></div>
+        <div><p>RINGS</p></div>
+        <div><p>EARRINGS</p></div>
+        <div><p>BRACELETS AND BANGLES</p></div>
+        <div><p>SOLITAIRES</p></div>
+        <div><p>MANGALSUTRA</p></div>
+        <div><p>OTHER JEWELLERY</p></div>
+        <div><p>GIFTING</p></div>
+    </div>
+    <div id="box1">
+
+    </div>
+    <div class="footer">
+        <div id="one">
+            <p>Know Your Jewellery</p>
+            <p>DIAMOND GUIDE</p>
+            <p>JEWELLERY GUIDE</p>
+            <p>GEMSTONES GUIDE</p>
+            <p>GOLD RATE</p>
+            <p>DIGITAL GOLD</p>
+        </div>
+        <div id="two">
+            <p>Aurum Jewels Advantage</p>
+            <p>15-DAY RETURNS</p>
+            <p>FREE SHIPPING</p>
+            <p>FINANCING OPTIONS</p>
+            <p>OLD GOLD EXCHANGE</p>
+        </div>
+        <div id="three">
+            <p>CUSTOMER SERVICE</p>
+            <p>RETURN POLICY</p>
+            <p>ORDER STATUS</p>
+        </div>
+        <div id="four">
+            <p>ABOUT US</p>
+            <p>OUR STORY</p>
+            <p>PRESS</p>
+            <p>BLOG</p>
+            <p>CAREERS</p>
+        </div>
+         <div id="five">
+            <p>CONTACT US</p>
+            <div id="contactlogos">
+                <div id="contactlogos1">
+                <img src="https://cdn-icons-png.flaticon.com/512/483/483947.png" alt="error">
+            </div>
+            <div id="contactlogos1">
+                <img src="https://cdn-icons-png.flaticon.com/512/589/589708.png" alt="error">
+            </div>
+            <div id="contactlogos1">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384023.png" alt="error">
+            </div>
+        </div>
+            <p>24x7 Enquiry Support(ALL DAYS)</p>
+            <p>General: <a href>Contactus@Aurumjewels.com</a> </p>
+            <p>Corporate:<a href>B2B@Aurumjewels.com</a> </p>
+            <p>HR: <a href>Careers@Aurumjewels.com</a> </p>
+            <p>Greivance: <a href>Click Here</a> </p>
+            <button>Find a Store</button>
+            </div>
+        </div>
+        </div>
+        <div class="socials">
+            <div>
+            <a href><img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="error"></a>
+            </div>
+            <div>
+            <a href><img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="error"></a>
+            </div>
+            <div>
+            <a href><img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="error"></a>
+            </div>
+            <div>
+            <a href><img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="error"></a>
+            </div>
+            <div>
+            <a href><img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="error"></a>
+            </div>
+        </div>
+        <div class="payments">
+            <div class="app">
+                <p>Download the Aurum Jewels App</p>
+                <div id="store">
+                    <button>Google Play</button>
+                    <button>App Store</button>
+                </div>
+            </div>
+            <div class="visa">
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968219.png" alt="error">
+                </div>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968219.png" alt="error">
+                </div>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968219.png" alt="error">
+                </div>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968219.png" alt="error">
+                </div>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968219.png" alt="error">
+                </div>
+                <div>
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968219.png" alt="error">
+                </div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+</body>
+<script>
+    let login=document.getElementById("login");
+    let signup=document.getElementById("singup");
+    //let dropdowncontent=document.querySelector(".dropdown-content");
+
+
+    let HOMEPAGEDATA=localStorage.getItem("homepagedata")
+    if(HOMEPAGEDATA==null){
+        HOMEPAGEDATA=[]
+    }
+    else{
+        HOMEPAGEDATA=JSON.parse(HOMEPAGEDATA);
+    }
+
+    if(HOMEPAGEDATA==[]){
+        login.style.display="inline"
+        signup.style.display="inline"
+    }
+    function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+    //If home page data==[] show option to sign up or login and link to those pages 
+    //if it is not empty show option to logout and show 0 and 1 elements of homepage data, my accounts, our story, logout
+</script>
+</html>
+<!-- media query 
+change tagline
+user icon and dashboard 
+icons  -->

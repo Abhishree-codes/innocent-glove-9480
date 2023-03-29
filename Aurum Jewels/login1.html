@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!--same nav bar-->
+    <h1>Login to Aurum Jewels</h1>
+    <button id="facebook">FACEBOOK</button>
+    <button id="google">GOOGLE</button>
+    <p>OR</p>
+    <h1>Enter Email</h1>
+    <input id="email" type="email">
+    <p style="display: none;" id="error">Enter Valid Email Address</p>
+    <button id="continue">CONTINUE</button>
+    <p>OR</p>
+    <p>New to Aurum Jewels? <a href="./register.html">Create an Account</a> </p>
+</body>
+<script>
+    let email=document.getElementById("email");
+    let con= document.getElementById("continue");
+    let error= document.getElementById("error");
+
+    let EMAIL=[];
+   
+    let USER_DATA= localStorage.getItem("userdata")
+    if(USER_DATA==null){
+        USER_DATA=[]
+    }
+    else{
+        USER_DATA= JSON.parse(USER_DATA);
+    }
+    email.addEventListener("input", ()=>{
+        ValidateEmail(email)
+    })
+
+    function ValidateEmail(input) { //input would be email
+
+var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+if (input.value.match(validRegex)) {
+    input.style.border="1px solid black"
+    error.style.display="none"
+    return true;
+
+} else {
+input.style.border= "1px solid red"
+error.style.display="block"
+return false;
+
+}
+
+}
+    con.addEventListener("click",()=>{
+        let flag1=false
+        for(let i=0; i<USER_DATA.length; i++){
+            if(USER_DATA[i].email==email.value){
+                flag1=true
+            }
+        }
+        if(flag1==false){
+            alert("Account does not exist")
+            window.location.href = "./register.html";
+            //redirect to register
+        }
+        else{
+            EMAIL.push(email.value);
+            localStorage.setItem("email", JSON.stringify(EMAIL));
+            //rediret to login2
+           // window.location.href = "./login2.html";
+            
+        }
+        if(flag1==true){
+            window.location.href = "./login2.html";
+        }
+    })
+</script>
+</html>

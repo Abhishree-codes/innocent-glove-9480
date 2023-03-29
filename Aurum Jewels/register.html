@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul#checking {
+            list-style:none; 
+           display: flex;
+           justify-content: space-evenly;
+        }
+        ul li::before{
+            content: "\2022";
+            color: rgb(173, 169, 173);
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+        p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h3>Sign up with Aurum Jewels</h3>
+    <button id="facebook">FACEBOOK</button>
+    <button id="google">GOOGLE</button>
+    <p>OR</p>
+    <h5>ISD</h5>
+    <input id="ISD" type="number">
+    <p id="invalidISD" style="display: none;">Invalid ISD</p>
+    <h5>Mobile Number</h5>
+    <input id="mobile" type="number">
+    <h5>Enter Email</h5>
+    <input id="email" type="email">
+    <p id="invalidEmail" style="display: none;">Enter a valid Email ID</p>
+    <h5>First Name</h5>
+    <input id="first-name" type="text">
+    <p id="invalidfirstname" style="display: none;">Enter a valid First Name</p>
+    <h5>Last Name</h5>
+    <input id="last-name" type="text">
+    <p id="invalidlastname" style="display: none;">Enter a valid Last Name</p>
+    <h5>Password</h5>
+    <input id="password" type="password">
+    <input type="checkbox" onclick="toggleVisibility()"/>Show Password</br> 
+    <ul id="checking">
+        <li id="checking1">8 chars</li>
+        <li id="checking2">1 Lowercase</li>
+        <li id="checking3">1 Uppercase</li>
+        <li id="checking4">1 Symbol</li>
+        <li id="checking5">1 Number</li>
+    </ul>
+    </div>
+    <h6>Confirm Password</h6>
+    <input id="confirm" type="password">
+    <input type="checkbox" onclick="toggleVisibility2()"/>Show Password</br> 
+    <p id="confirmmsg" style="display: none;">Passwords do not match</p>
+    <input type="radio" id="male" name="gender" value="male" checked="checked">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br>
+    <input type="radio" id="specify" name="gender" value="don't want to specify">
+    <label for="specify">Don't want to specify</label>
+    <button id="register">Register to continue</button>
+    <p id="login">Already have an Account? <a href="./login1.html"> LOG IN</a></p> <!--insert aherf here-->
+    <div id="otp" style="display:none">
+        <h2>Enter OTP</h2>
+       <input type="number" id="enterotp"> 
+       <button id="verify">Verify</button>
+    </div>
+</body>
+<script>
+    let OTP_DATA=[1234, 5678]
+    localStorage.setItem("otp", JSON.stringify(OTP_DATA));
+
+    let USER_DATA=localStorage.getItem("userdata");
+    if(USER_DATA==null){
+        USER_DATA=[]
+    }
+    else{
+        USER_DATA=JSON.parse(USER_DATA);
+    }
+
+    let userobj={};
+
+    let password= document.getElementById("password");
+    let checking1=document.getElementById("checking1");
+    let checking2=document.getElementById("checking2");
+    let checking3=document.getElementById("checking3");
+    let checking4=document.getElementById("checking4");
+    let checking5=document.getElementById("checking5");
+    let checking= document.getElementById("checking");
+    let confirm= document.getElementById("confirm");
+    let confirmmsg= document.getElementById("confirmmsg");
+    let register=document.getElementById("register");
+    let verify=document.getElementById("verify")
+
+    let invalidISD=document.getElementById("invalidISD")
+    let invalidEmail=document.getElementById("invalidEmail");
+    let invalidfirstname= document.getElementById("invalidfirstname");
+    let invalidlastname=document.getElementById("invalidlastname");
+    let otp= document.getElementById("otp")
+    let inpOTP= document.getElementById("enterotp")
+    //INPUTS
+
+    let inpISD= document.getElementById("ISD");
+    let inpMobile= document.getElementById("mobile");
+    let inpEmail=document.getElementById("email")
+    let inpFirstName= document.getElementById("first-name");
+    let inpLastName=document.getElementById("last-name");
+    let inpPassword= document.getElementById("password");
+    let inpConfirm= document.getElementById("confirm")
+    //let inpGender= document.querySelector('input[name = "gender"]:checked').value
+    let inpMale=document.getElementById("male");
+    let inpFemale= document.getElementById("female");
+    let inpSpecify=document.getElementById("specify")
+
+    function toggleVisibility() {  
+  var getPasword = document.getElementById("password");  
+  if (getPasword.type === "password") {  
+    getPasword.type = "text";  
+  } else {  
+    getPasword.type = "password";  
+  }  
+}  
+function toggleVisibility2() {  
+  var getPasword = document.getElementById("confirm");  
+  if (getPasword.type === "password") {  
+    getPasword.type = "text";  
+  } else {  
+    getPasword.type = "password";  
+  }  
+}  
+
+
+    let flag1= true;
+    let flag2=true;
+
+    password.addEventListener("input", function(){
+       re= /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
+       
+       if(password.value.length<8){
+        checking1.style.color="red"
+       }
+       else{
+        checking1.style.color="green"
+       }
+       if(password.value.search(/[0-9]/i) < 0){
+        checking5.style.color="red"
+       }
+       else{
+        checking5.style.color="green"
+       }
+       if(password.value.search(/[a-z]/) < 0){
+        checking2.style.color="red"
+       }
+       else{
+        checking2.style.color="green"
+       }
+       if(password.value.search(/[A-Z]/) < 0){
+        checking3.style.color="red"
+       }
+       else{
+        checking3.style.color="green"
+       }
+       if(password.value.search(/[!#$%&? @"]/) <0){
+        checking4.style.color="red"
+       }
+       else{
+        checking4.style.color="green"
+       }
+   // document.write('<span style="color:'+ (re.test(password.value) ? 'green':'red') + '">' + password.value + '</span><br/>');
+   if(re.test(password.value)){
+console.log("true")
+flag1=true;
+   }
+   else{
+    console.log("False")
+  flag1= false
+   }
+    })
+
+    confirm.addEventListener("input", ()=>{
+      
+       // console.log(confirm.value)
+        if (confirm.value!=password.value){
+            confirmmsg.style.display="inline";
+            flag2=false
+        }
+        else{
+            confirmmsg.style.display="none";
+            flag2= true
+        }
+    })
+
+register.addEventListener("click",()=>{
+   let gender=[];
+   let inpGender="";
+   gender.push(inpMale, inpFemale, inpSpecify);
+   for(let i=0; i<gender.length; i++){
+    if(gender[i].checked){
+        inpGender=gender[i].value
+    }
+   }
+    //if any inp value is empty also need to check for that //better to push it into an array and loop over the array?
+    if(flag1==true && flag2==true && inpISD.value!="" && inpMobile.value!="" && inpFirstName.value!="" && inpLastName.value!="" && inpPassword.value!="" && inpEmail.value!="" && inpGender!="" && inpConfirm!=""){
+       let flag3= true;
+        for(let i=0; i<USER_DATA.length; i++){
+            if(USER_DATA[i].email==inpEmail.value){
+                flag3=false;
+            }
+        }
+        if(flag3==false){
+            alert("Email Already Registered")
+        }
+        else{
+        let obj={
+           ISD: inpISD.value,
+           Mobile:inpMobile.value,
+           email:inpEmail.value,
+           firstname: inpFirstName.value,
+           lastname:inpLastName.value,
+           password:inpPassword.value,
+           gender: inpGender
+        }
+        userobj={...obj};
+
+        // USER_DATA.push(obj);
+        // localStorage.setItem("userdata", JSON.stringify(USER_DATA))
+        //div otp
+        otp.style.display="block"
+       // console.log(obj)
+    }
+    
+        
+    }
+    //need to do else here 
+    else{
+        if(inpISD.value==""){
+            invalidISD.style.display="inline"
+            
+            inpISD.style.border="1px solid red"
+        }
+        if(inpMobile.value==""){
+            inpMobile.style.border="1px solid red"
+        }
+        if(inpFirstName.value==""){
+            invalidfirstname.style.display="inline";
+            
+            inpFirstName.style.border="1px solid red";
+        }
+       if(inpLastName.value==""){
+            invalidlastname.style.display="inline";
+         
+            inpLastName.style.border="1px solid red";
+       }
+       // inpPassword.value, 
+       if(inpEmail.value==""){
+        invalidEmail.style.display="inline";
+       
+        inpEmail.style.border="1px solid red";
+       }
+       if(inpConfirm.value==""){
+        confirmmsg.style.display="inline";
+        inpConfirm.style.border="1px solid red";
+       }
+    }
+})
+verify.addEventListener("click",()=>{
+    let flagOTP=false
+    for(let i=0; i<OTP_DATA.length; i++){
+        if(OTP_DATA[i]==inpOTP.value){
+            flagOTP=true;
+        }
+    }
+    if(flagOTP==false){
+        alert("Invalid OTP")
+    }
+    else{
+        USER_DATA.push(userobj);
+        localStorage.setItem("userdata", JSON.stringify(USER_DATA))
+        alert("OTP Verified Suucessfully!")
+        alert("Thank you for registering with us!")
+        //here we have to store it in LSDATA not before 
+        //here also redirect to home page with user icon
+        //redirect to home page with user icon and panel
+    }
+})
+inpISD.addEventListener("input", ()=>{
+    invalidISD.style.display="none"
+    inpISD.style.border="1px solid black";
+})
+inpMobile.addEventListener("input",()=>{
+    inpMobile.style.border="1px solid black"
+})
+inpFirstName.addEventListener("input",()=>{
+            invalidfirstname.style.display="none";
+            
+            inpFirstName.style.border="1px solid black";
+        })
+inpLastName.addEventListener("input", ()=>{
+            invalidlastname.style.display="none";
+         
+            inpLastName.style.border="1px solid black";
+       })
+inpEmail.addEventListener("input", ()=>{
+        invalidEmail.style.display="none";
+       
+        inpEmail.style.border="1px solid black";
+       })
+inpConfirm.addEventListener("input",()=>{
+        confirmmsg.style.display="none";
+        inpConfirm.style.border="1px solid black";
+       })
+    
+</script>
+</html>
+
+<!-- confirm password (passwords do not match)
+    you can take flags for if condition is false and say that if any flag is false dont proceed to next page 
+    if input value is empty when you click conitnue display message  (on click check if any input value is empty and if its display msg if not, you take all the inputs in an object put them in an array and store it in ls data)
+password characters cant proceed if the theres not(8 characters, 1 lower, 1 upper, 1 symbol, 1 number) //regex 
+check for otp
+direct to login --NOT DONE
+otp needs to be prestored in lsdata
+show functionality in password 
+all input boxes  need event listeners to go back to not being red
+if email alrdy registered show alert with email already registered (user cant registered twice)
+inp gender is by deafult set to male
+if its all successful store it in ls data
+change alert to just a message---NOT DONE
+admin side>=? -->
+

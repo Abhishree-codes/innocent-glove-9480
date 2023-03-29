@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Enter Password to Login</h1>
+    <h2 id="email"> </h2>
+    <a href="./login1.html">Change Email</a>
+    <h2>Enter Password</h2>
+    <input type="password" id="password">
+    <input type="checkbox" onclick="toggleVisibility()"/>Show Password</br> 
+    <button id="login">Log In</button>
+    <h2>Forgot Password?</h2> <!--hyperlink here-->
+    <p>OR</p>
+    <button id="emailotp">Get OTP in your Email</button>
+    <p>OR</p>
+    <button id="facebook">FACEBOOK</button>
+    <button id="google">GOOGLE</button>
+</body>
+<script>
+    function toggleVisibility() {  
+  var getPasword = document.getElementById("password");  
+  if (getPasword.type === "password") {  
+    getPasword.type = "text";  
+  } else {  
+    getPasword.type = "password";  
+  }  
+}
+let HOME_PAGE_DATA=[];
+
+let USER_DATA= localStorage.getItem("userdata");
+if(USER_DATA==null){
+    USER_DATA=[]
+}
+else{
+    USER_DATA=JSON.parse(USER_DATA);
+}
+    let email= document.getElementById("email")
+    let EMAIL= localStorage.getItem("email");
+    EMAIL=JSON.parse(EMAIL);
+    email.innerText=EMAIL[0];
+
+    let password= document.getElementById("password");
+    let login=document.getElementById("login");
+    login.addEventListener("click",()=>{
+        let flag1=false
+        for(let i=0; i<USER_DATA.length; i++){
+            if(USER_DATA[i].password==password.value){ //you have to check with email because password might be same 
+                HOME_PAGE_DATA.push(USER_DATA[i].firstname, USER_DATA[i].email);
+                flag1=true;
+                break;
+            }
+        }
+        if(flag1==false){
+            alert("Invalid Email or Password!")
+        }
+        else{
+            console.log(HOME_PAGE_DATA)
+            localStorage.setItem("homepagedata", JSON.stringify(HOME_PAGE_DATA));
+            //redirect to home page with user icon
+            window.location.href = "./Home.html";
+        }
+    })
+
+</script>
+</html>

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        a{
+            text-decoration: none;
+        }
         ul#checking {
             list-style:none; 
            display: flex;
@@ -22,27 +25,133 @@
         p{
             color: red;
         }
+        .container{
+            width:25%;
+           margin: auto;
+           margin-left: 600px;
+           display: grid;
+           grid-template-columns: repeat(2,1fr);
+           
+        }
+        .container>div{
+            /* border: 1px solid black; */
+            
+        }
+        .container>div:nth-child(1){
+            grid-column-start: 1;
+            grid-column-end: 3;
+            text-align: center;
+        }
+        .container>div:nth-child(2){
+            grid-column-start: 1;
+            grid-column-end: 3;
+            text-align: center;
+        }
+        .container>div:nth-child(3){
+            grid-column-start: 1;
+            grid-column-end: 3;
+            text-align: center;
+        }
+        .container>div:nth-child(6){
+            grid-column-start: 1;
+            grid-column-end: 3;
+           
+        }
+        .container>div:nth-child(6)> input{
+           width: 90%;
+        }
+        .container>div:nth-child(9){
+            grid-column-start: 1;
+            grid-column-end: 3;
+           font-size: 10px;
+        }
+        .container>div:nth-child(9) ul{
+            margin-left: -60px;
+        }
+        .container>div:nth-child(10){
+            grid-column-start: 1;
+            grid-column-end: 3;
+           
+        }
+        
+        .container>div:nth-child(11){
+            grid-column-start: 1;
+            grid-column-end: 3;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .container>div:nth-child(12){
+            grid-column-start: 1;
+            grid-column-end: 3;
+           text-align: center;
+           height: 50px;
+           display: flex;
+           align-items: center;
+        }
+        .container>div:nth-child(12) button{
+           border: 1px solid transparent;
+           background-color: purple;
+           color: white;
+          height: 80%;
+          margin: auto;
+          border-radius: 10px;
+        }
+        .container>div:nth-child(13){
+            grid-column-start: 1;
+            grid-column-end: 3;
+           text-align: center;
+        }
+        #otp{
+            width:20%;
+            margin: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            font-size: 20px;
+        }
+        #otp button{
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
+<div class="container">
+    <div>
     <h3>Sign up with Aurum Jewels</h3>
+    </div>
+    <div>
     <button id="facebook">FACEBOOK</button>
     <button id="google">GOOGLE</button>
+    </div>
+    <div>
     <p>OR</p>
+    </div>
+    <div>
     <h5>ISD</h5>
     <input id="ISD" type="number">
     <p id="invalidISD" style="display: none;">Invalid ISD</p>
+    </div>
+    <div>
     <h5>Mobile Number</h5>
     <input id="mobile" type="number">
+    </div>
+    <div>
     <h5>Enter Email</h5>
     <input id="email" type="email">
     <p id="invalidEmail" style="display: none;">Enter a valid Email ID</p>
+    </div>
+    <div>
     <h5>First Name</h5>
     <input id="first-name" type="text">
     <p id="invalidfirstname" style="display: none;">Enter a valid First Name</p>
+    </div>
+    <div>
     <h5>Last Name</h5>
     <input id="last-name" type="text">
     <p id="invalidlastname" style="display: none;">Enter a valid Last Name</p>
+    </div>
+    <div>
     <h5>Password</h5>
     <input id="password" type="password">
     <input type="checkbox" onclick="toggleVisibility()"/>Show Password</br> 
@@ -54,23 +163,32 @@
         <li id="checking5">1 Number</li>
     </ul>
     </div>
+    <div>
     <h6>Confirm Password</h6>
     <input id="confirm" type="password">
     <input type="checkbox" onclick="toggleVisibility2()"/>Show Password</br> 
     <p id="confirmmsg" style="display: none;">Passwords do not match</p>
+    </div>
+    <div>
     <input type="radio" id="male" name="gender" value="male" checked="checked">
-    <label for="male">Male</label><br>
+    <label for="male">Male</label>
     <input type="radio" id="female" name="gender" value="female">
-    <label for="female">Female</label><br>
+    <label for="female">Female</label>
     <input type="radio" id="specify" name="gender" value="don't want to specify">
     <label for="specify">Don't want to specify</label>
-    <button id="register">Register to continue</button>
+    </div>
+    <div>
+    <button id="register">REGISTER TO CONTINUE</button>
+    </div>
+    <div>
     <p id="login">Already have an Account? <a href="./login1.html"> LOG IN</a></p> <!--insert aherf here-->
+    </div>
     <div id="otp" style="display:none">
         <h2>Enter OTP</h2>
        <input type="number" id="enterotp"> 
        <button id="verify">Verify</button>
     </div>
+</div>
 </body>
 <script>
     let OTP_DATA=[1234, 5678]
@@ -234,7 +352,6 @@ register.addEventListener("click",()=>{
         otp.style.display="block"
        // console.log(obj)
     }
-    
         
     }
     //need to do else here 
@@ -315,7 +432,6 @@ inpConfirm.addEventListener("input",()=>{
         confirmmsg.style.display="none";
         inpConfirm.style.border="1px solid black";
        })
-    
 </script>
 </html>
 

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cont{
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+           
+        }
+        #cont img{
+            width: 20%;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="total">Your Total cart Price is:- <span id="cart-total">0</span></h1>
+    <div id="cont">
+
+    </div>
+    <div id="checkout">
+       <button><h1>Checkout Securely</h1></button>
+    </div>
+</body>
+<script>
+    let cont=document.getElementById("cont");
+    let total=document.getElementById("cart-total");
+
+    let HOMEPAGEDATA=localStorage.getItem("homepagedata")
+    if(HOMEPAGEDATA==null){
+        HOMEPAGEDATA=[]
+    }
+    else{
+        HOMEPAGEDATA=JSON.parse(HOMEPAGEDATA);
+    }
+
+   
+    if(HOMEPAGEDATA.length!=0){
+    let CART=JSON.parse(localStorage.getItem("cart")) || []
+    display(CART);
+    }
+    else{
+        
+        let TEMP=JSON.parse(localStorage.getItem("temp")) || []
+        display(TEMP);
+        //console.log(TEMP[0].title)
+    }
+//it will either get called on temp or cart depending on homedata length
+//if it is cart i need to only select those objects which have email key value equal to homedata[1]
+//wishlist works like a remove button but whatever gets removed gets added in wishlist with email unique 
+
+    function display(data){
+        cont.innerHTML="";
+
+for(let i=0; i<data.length; i++){
+    if(HOMEPAGEDATA.length!=0 && data[i].email!=HOMEPAGEDATA[1]){
+        continue;
+    }
+  let div=document.createElement("div");
+  let img=document.createElement("img");
+  let h2= document.createElement("h2");
+  let h3=document.createElement("h3");
+  let p1= document.createElement("p");
+  let p2=document.createElement("p")
+  let btn1= document.createElement("button");
+  let span= document.createElement("span");
+  let btn2= document.createElement("button");
+  let btn3= document.createElement("button");
+  let btn4= document.createElement("button");
+
+  img.setAttribute("src", data[i].image);
+  h2.innerText= data[i].title;
+  h3.innerText=data[i].id;
+  p1.innerText="Check Delivery Date";
+  p2.innerText=data[i].price;
+  btn1.innerText="+";
+  span.innerText=data[i].quantity; //default
+  btn2.innerText="-";
+  btn3.innerText="Remove";
+  btn4.innerText="Add to Wishlist"
+
+  div.append(img, h2, h3, p1, p2, btn1, span, btn2, btn3, btn4);
+  cont.append(div);
+
+  btn4.addEventListener("click",()=>{
+    //each user will have a diff wishlist
+  })
+  btn1.addEventListener("click", function(){
+    data[i].quantity++;
+    span.innerText=data[i].quantity ; //TOTAL
+   sum(data);
+  })
+  btn2.addEventListener("click", function(){
+    if(data[i].quantity>0){
+    data[i].quantity--
+    }
+    span.innerText=data[i].quantity; // do i put condition for below 0 //TOTAL
+    sum(data);
+  
+   
+  })
+  btn3.addEventListener("click", function(){
+    let filter2= data.filter((ele)=>{
+      return ele.id!= data[i].id;
+    })
+    display(filter2);
+    localStorage.setItem("cart", JSON.stringify(filter2))
+  })
+  
+  sum(data);
+      }
+      
+    }
+
+    function sum(data){
+      let sum=0
+      for(let m=0; m<data.length; m++){
+        sum= sum+(data[m].quantity*data[m].price);
+      }
+      total.innerText=sum
+    }
+    
+</script>
+</html>
+
+<!-- IF I LOGOUT ITS NOT GETTING REFRESHED 
+IF I RELOAD IT SWITCHED TO TEMP INSTEAD OF EMPTYING TEMP-->

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #container{
+        margin-top: 50px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap:20px;
+       
+        }
+        #container>div{
+            border: 1px solid black;
+        }
+        .jewelphoto{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <select id="price">
+        <option value="">Price</option> 
+        <!-- upper lower can also display count of how many items in range span in each option?-->
+        <option value="5001-10000">₹5,001  - ₹10,000</option>
+        <option value="10,001-15,000">₹10,001  - ₹15,000 </option> 
+        <option value="15,001-20,000">₹15,001  - ₹20,000</option>
+        <option value="20,001-30,000">₹20,001  - ₹30,000 </option>
+        <option value="30,001-40,000">₹30,001  - ₹40,000 </option>
+        <option value="40,001-50,000">₹40,001  - ₹50,000 </option>
+        <option value="50,001-75,000">₹50,001  - ₹75,000 </option>
+        <option value="75,001-1,00,000">₹75,001  - ₹1,00,000</option>
+        <option value="1,00,001-1,50,000 ">₹1,00,001  - ₹1,50,000</option>
+        <option value="1,50,001-2,00,000">₹1,50,001  - ₹2,00,000 </option>
+        <option value="2,00,001-2,50,000">₹2,00,001  - ₹2,50,000</option>
+        <option value="Over ₹2,50,000">Over ₹2,50,000</option>
+      </select>
+    <select id="type">
+        <option value="">Product Type</option>
+        <option value="Earrings">Earrings</option>
+        <option value="Rings">Rings</option>
+        <option value="Necklaces">Necklaces</option>
+        <option value="Pendants">Pendants</option>
+        <option value="Bracelets">Bracelets</option>
+        <option value="Bangles">Bangles</option>
+        <option value="Mangalsutra">Mangalsutra</option>
+      </select>
+      <select id="weight">
+        <option value="">Weight Ranges</option>
+        <option value="2-5">2-5 g</option>
+        <option value="5-10">5-10 g</option>
+        <option value="10-20">10-20 g</option>
+      </select>
+      <select id="metal">
+        <option value="">Metal</option>
+        <option value="Yellow Gold">Yellow Gold</option>
+        <option value="White Gold">White Gold</option>
+        <option value="Platinum">Platinum</option>
+        <option value="Rose Gold">Rose Gold</option>
+      </select>
+      <select id="shopFor">
+        <option value="">Shop For</option>
+        <option value="Men">Men</option>
+        <option value="Women">Women</option>
+      </select>
+      <select id="sort">
+        <option value="">Sort By</option>
+        <option value="discount">Discount</option>
+        <option value="htl">Price-High to Low</option>
+        <option value="lth">Price-Low to High</option>
+        <option value="latest">Latest</option>
+        <option value="featured">Featured</option>
+      </select>
+ <div id="container">
+
+ </div>
+</body>
+<script>
+let container= document.getElementById("container");
+let filter1=document.getElementById("filter1");
+let filter2=document.getElementById("filter2");
+
+
+let HOMEPAGEDATA=localStorage.getItem("homepagedata")
+    if(HOMEPAGEDATA==null){
+        HOMEPAGEDATA=[]
+    }
+    else{
+        HOMEPAGEDATA=JSON.parse(HOMEPAGEDATA);
+    }
+    let TEMP=[];
+    let CART=localStorage.getItem("cart");
+    if(CART==null){
+        CART=[]
+    }
+    else{
+        CART=JSON.parse(CART);
+    }
+    
+
+ let res2= fetch("https://mocki.io/v1/a68534c2-bdbd-4487-b0e8-5e9aea69ed78")
+    res2.then((res)=>{
+        return res.json()
+    }).then((data)=>{
+       //console.log(data)
+        display(data)
+        //here you will call display function 
+    }).catch((error)=>{
+        console.log(error)
+    })
+
+    //sort, filter and indi product search bar will be independent of user 
+
+
+function display(data){
+    container.innerHTML=null;
+    for(let i=0; i<data.length; i++){
+let div=document.createElement("div");
+let img=document.createElement("img");
+let wishlist=document.createElement("img");
+let cart=document.createElement("button");
+let price=document.createElement("h5");
+let delivery=document.createElement("h4");
+let title=document.createElement("h4");
+let tryHome=document.createElement("button");
+let video=document.createElement("button");
+let extra=document.createElement("h5");
+
+img.setAttribute("src", data[i].image);
+img.setAttribute("class", "jewelphoto")
+wishlist.setAttribute("src", "https://cdn-icons-png.flaticon.com/128/2767/2767003.png")
+cart.innerText="Add to Cart";
+price.innerText=`₹, ${data[i].price}`;
+delivery.innerText="Check delivery date"
+title.innerText=data[i].title;
+tryHome.innerText="Book Try At Home"
+video.innerText="Live Video Call";
+if(data[i].extra!="x"){
+    extra.innerText=data[i].extra
+}
+
+img.addEventListener("click",()=>{
+    //redirect to indi product page 
+   //console.log("hi")
+   let INDI=[];
+   INDI.push(data[i])
+   localStorage.setItem("indi", JSON.stringify(INDI));
+   window.location.href = "./individualproduct.html";
+   //create an empty array and push data[i] into that 
+})
+cart.addEventListener("click", ()=>{
+    //multiple times functionality 
+    //if homepage data1 is equal to email key in cart and id in cart is equal to data[i].id
+    //say product already in cart
+    if(HOMEPAGEDATA.length!=0){
+        let flag1=true;
+        for(let j=0; j<CART.length; j++){
+            if(HOMEPAGEDATA[1]==CART[j].email && data[i].id==CART[j].id){
+                flag1=false
+            }
+        }
+        if(flag1==false){
+            alert("Product Already in Cart")
+        }
+        else{
+           // console.log(HOMEPAGEDATA)
+        // HOMEPAGEDATA.push({...data[i], quantity:1})
+        CART.push({...data[i], email: HOMEPAGEDATA[1], quantity:1})
+        localStorage.setItem("cart", JSON.stringify(CART))
+        }
+    }
+    //how am i storing it
+    //...data[i],quanity:1
+    else {
+       let flag2=true;
+       for(let k=0; k<TEMP.length; k++){
+        if(data[i].id==TEMP[k].id){
+            flag2=false
+        }
+       }
+
+       if(flag2==false){
+        alert("Product Already in Cart")
+       }
+
+       else{
+TEMP.push({...data[i], quantity:1}); //this will delete everytime its refreshed 
+localStorage.setItem("temp", JSON.stringify(TEMP))
+
+       }
+    }
+
+//alert("product added to cart")
+})
+div.append(img, wishlist, cart, price, delivery, title, tryHome, video, extra);
+container.append(div);
+}
+}
+</script>
+</html>
+<!-- div
+Image 
+on image put the extra key value
+Add to wishlist on image (wish list key)
+Price
+check delievery date
+Title
+Add to cart (cart key or do i put an array in user object data??)
+two buttons for book try at home and live video call
+div -->
+
+<!-- features
+    whatever filters are applied are appearing  in a box 
+add to cart 
+add to wishlist
+both pages 
+individial page looping
+cant add same twice
+search 
+filter 
+sort 
+linking this with nav bar -->
+

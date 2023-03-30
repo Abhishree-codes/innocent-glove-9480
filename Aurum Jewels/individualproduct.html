@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cont">
+
+    </div>
+</body>
+<script>
+    let INDI=JSON.parse(localStorage.getItem("indi")) || [];
+    let cont=document.getElementById("cont")
+    
+    function display(data){
+    cont.innerHTML=null;
+    for(let i=0; i<data.length; i++){
+let div=document.createElement("div");
+let img=document.createElement("img");
+let wishlist=document.createElement("img");
+let cart=document.createElement("button");
+let price=document.createElement("h5");
+let delivery=document.createElement("h4");
+let title=document.createElement("h4");
+let tryHome=document.createElement("button");
+let video=document.createElement("button");
+let extra=document.createElement("h5");
+
+img.setAttribute("src", data[i].image);
+img.setAttribute("class", "jewelphoto")
+wishlist.setAttribute("src", "https://cdn-icons-png.flaticon.com/128/2767/2767003.png")
+cart.innerText="Add to Cart";
+price.innerText=`₹, ${data[i].price}`;
+delivery.innerText="Check delivery date"
+title.innerText=data[i].title;
+tryHome.innerText="Book Try At Home"
+video.innerText="Live Video Call";
+if(data[i].extra!="x"){
+    extra.innerText=data[i].extra
+}
+}
+    }
+
+</script>
+</html>
+
+<!-- do i include add to cart and wishlist here 
+fix the function display-->

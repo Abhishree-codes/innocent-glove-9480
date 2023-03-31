@@ -40,8 +40,10 @@ else{
     USER_DATA=JSON.parse(USER_DATA);
 }
     let email= document.getElementById("email")
+
     let EMAIL= localStorage.getItem("email");
     EMAIL=JSON.parse(EMAIL);
+    console.log(EMAIL);
     email.innerText=EMAIL[0];
 
     let password= document.getElementById("password");
@@ -49,7 +51,7 @@ else{
     login.addEventListener("click",()=>{
         let flag1=false
         for(let i=0; i<USER_DATA.length; i++){
-            if(USER_DATA[i].password==password.value){ //you have to check with email because password might be same 
+            if(USER_DATA[i].password==password.value && USER_DATA[i].email==EMAIL[0]){ //you have to check with email because password might be same 
                 HOME_PAGE_DATA.push(USER_DATA[i].firstname, USER_DATA[i].email);
                 flag1=true;
                 break;

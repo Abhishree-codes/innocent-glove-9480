@@ -6,30 +6,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+     *{
+      box-sizing: border-box;
+     }
+     body{
+      margin: 0px;
+      padding: 0px;
+     }
+       body>div{
+          display: flex;
+          justify-content: space-evenly;
+          width:100%;
+          background-color: rgb(239, 234, 234);
+        }
         #cont{
-            width: 80%;
+            width: 60%;
             display: grid;
             grid-template-columns: repeat(1, 1fr);
+            /* border:1px solid black; */
+            gap:20px;
            
         }
         #cont img{
-            width: 20%;
+            width: 100%;
             height: 300px;
+          border: 1px solid rgb(228, 223, 223);
+          border-radius: 5px;
         }
+        #cont >div{
+         background-color: white;
+         border-radius: 5px;
+          border: 1px solid  rgb(228, 223, 223);
+          display: grid;
+          grid-template-columns: repeat(3,1fr);
+
+        }
+        #cont>div>div:nth-child(1){
+          padding: 10px;
+        }
+        #cont>div>div:nth-child(2){
+          padding: 20px;
+        }
+        #cont>div>div:nth-child(3) button {
+         display: block;
+         margin-top: 50px;
+         padding: 5px;
+         background-color: transparent;
+         border: 1px solid grey;
+         border-radius: 5px;
+        }
+        #cont>div>div:nth-child(3) button:hover{
+          cursor: pointer;
+        }
+       #checkout{
+        width: 28%;
+        /* border: 1px solid black; */
+        display: flex;
+        height: 400px;
+        flex-direction: column;
+        justify-content: space-around;
+       }
+       #checkout>div{
+        border: 1px solid rgb(214, 211, 211);
+        background-color: white;
+        border-radius: 5px;
+
+       }
+       #checkout button{
+        width:100%;
+        padding: 10px;
+        border: 1px solid transparent;
+        color: white;
+        background-color: purple;
+        border-radius: 5px;
+       }
+       #checkout button:hover{
+        cursor: pointer;
+       }
+       #totaldetails >div{
+        display: flex;
+        justify-content: space-between;
+        padding-left:10px;
+        padding-right: 10px;
+       }
+       #pin{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+       }
+       #apply{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+       }
     </style>
 </head>
 <body>
+
+  <div class="one">
     <h1 id="total">Your Total cart Price is:- <span id="cart-total">0</span></h1>
+    <h1>Cart- <span id="quantitytotal">0</span></h1>
+  </div>
+  <div>
     <div id="cont">
 
     </div>
     <div id="checkout">
-       <button><h1>Checkout Securely</h1></button>
+      <div id="apply">
+        <p>Apply Coupon </p>
+          <p>></p>
+      </div>
+      <div id="pin">
+       <p> Check Delivery Date</p>
+       <p>Enter Pincode</p>
+      </div>
+      <p>Order Summary</p>
+      <div id="totaldetails">
+      <div>
+        <p>Coupon Discount</p>
+        <p>Apply Coupon</p>
+        </div>
+        <div>
+        <p>Delivery Charge (Standard)</p>
+        <p>FREE</p>
+        </div>
+        <div>
+        <p>TOTAL COST </p>
+        <p>0</p>
+        </div>
+      </div>
+      <div>
+       <button>Checkout Securely</button>
+       </div>
+    </div>
     </div>
 </body>
 <script>
     let cont=document.getElementById("cont");
     let total=document.getElementById("cart-total");
+    let amount=document.getElementById("quantitytotal");
+
 
     let HOMEPAGEDATA=localStorage.getItem("homepagedata")
     if(HOMEPAGEDATA==null){
@@ -39,14 +157,48 @@
         HOMEPAGEDATA=JSON.parse(HOMEPAGEDATA);
     }
 
-   
+   let TEMP;
+   //I ONLY WANT THE BELOW TO HAPPEN WHEN THE USER LOGS OUT NOT ANY OTHER TIME (when homepage data gets empty so it needs to cinatantly be checking home page data)
+//    window.addEventListener("load", (event) => {
+//     TEMP=[];
+//     localStorage.setItem("temp", JSON.parse)
+//   //console.log("page is fully loaded");
+// });
+
+// let count; 
+// window.addEventListener('storage', () => {
+//   let CHECK=JSON.parse(localStorage.getItem("homepagedata"));
+//   let CHECK2= JSON.parse(localStorage.getItem("temp"))
+//   //console.log(CHECK)
+//   if(CHECK.length!=0){
+//      count=0
+//      //console.log(count)
+//   }
+//   //only need below to happen when user logs out, not again and again meaning if the homedata was full and then got emptied only happen then
+//   if(CHECK.length==0 && CHECK2.length!=0){ // will empty temp only when user logs out and temp has something in it 
+//     count++;
+//     // console.log(count)
+//     if(count==1){
+//     console.log("gone") //this is checking mutltiple times i only want it to run once but keep checking 
+//     CHECK2=[];
+//     localStorage.setItem("temp",JSON.stringify(CHECK2))
+//     display(CHECK2)
+//   }
+// }
+//   else{
+//     console.log(CHECK)
+//     console.log(CHECK2)
+//     console.log("not working")
+//     //console.log(JSON.parse(CHECK))
+//   }
+// });
     if(HOMEPAGEDATA.length!=0){
     let CART=JSON.parse(localStorage.getItem("cart")) || []
     display(CART);
     }
     else{
         
-        let TEMP=JSON.parse(localStorage.getItem("temp")) || []
+        TEMP=JSON.parse(localStorage.getItem("temp")) || []
         display(TEMP);
         //console.log(TEMP[0].title)
     }
@@ -61,7 +213,10 @@ for(let i=0; i<data.length; i++){
     if(HOMEPAGEDATA.length!=0 && data[i].email!=HOMEPAGEDATA[1]){
         continue;
     }
-  let div=document.createElement("div");
+    let div=document.createElement("div");
+  let div1=document.createElement("div");
+  let div2=document.createElement("div");
+  let div3=document.createElement("div");
   let img=document.createElement("img");
   let h2= document.createElement("h2");
   let h3=document.createElement("h3");
@@ -83,10 +238,14 @@ for(let i=0; i<data.length; i++){
   btn2.innerText="-";
   btn3.innerText="Remove";
   btn4.innerText="Add to Wishlist"
-
-  div.append(img, h2, h3, p1, p2, btn1, span, btn2, btn3, btn4);
-  cont.append(div);
-
+//append img in one div and remove add to wishlist in one div and the rest in another div (3 divs in total that will append to cont)
+  // div.append(img, h2, h3, p1, p2, btn1, span, btn2, btn3, btn4);
+  div1.append(img);
+  div2.append(h2, p1, p2, btn1, span, btn2)
+  div3.append(btn3,btn4)
+  div.append(div1,div2,div3);
+  cont.append(div)
+//cost total quantity appending change 
   btn4.addEventListener("click",()=>{
     //each user will have a diff wishlist
   })
@@ -94,14 +253,31 @@ for(let i=0; i<data.length; i++){
     data[i].quantity++;
     span.innerText=data[i].quantity ; //TOTAL
    sum(data);
+   if(HOMEPAGEDATA.length!=0){
+    localStorage.setItem("cart", JSON.stringify(data));
+    }
+    else{
+        
+      localStorage.setItem("temp", JSON.stringify(data));
+        //console.log(TEMP[0].title)
+    }
   })
   btn2.addEventListener("click", function(){
     if(data[i].quantity>0){
     data[i].quantity--
     }
-    span.innerText=data[i].quantity; // do i put condition for below 0 //TOTAL
-    sum(data);
+    //update local storage also for both cart and temp
   
+    span.innerText=data[i].quantity; 
+    sum(data);
+    if(HOMEPAGEDATA.length!=0){
+    localStorage.setItem("cart", JSON.stringify(data));
+    }
+    else{
+        
+      localStorage.setItem("temp", JSON.stringify(data));
+        //console.log(TEMP[0].title)
+    }
    
   })
   btn3.addEventListener("click", function(){
@@ -119,14 +295,50 @@ for(let i=0; i<data.length; i++){
 
     function sum(data){
       let sum=0
+      let quantitytotal=0;
       for(let m=0; m<data.length; m++){
         sum= sum+(data[m].quantity*data[m].price);
+        if(HOMEPAGEDATA.length!=0){
+          if(data[m].email==HOMEPAGEDATA[1]){
+            quantitytotal=quantitytotal+Number((data[m].quantity));
+          }
+        }
+        else{
+        quantitytotal=quantitytotal+Number((data[m].quantity));
+        }
+       //console.log(data[m].quantity)
       }
       total.innerText=sum
+      console.log(quantitytotal)
+      amount.innerText=`(${quantitytotal})`
+     
     }
+    
     
 </script>
 </html>
 
 <!-- IF I LOGOUT ITS NOT GETTING REFRESHED 
-IF I RELOAD IT SWITCHED TO TEMP INSTEAD OF EMPTYING TEMP-->
+IF I RELOAD IT SWITCHED TO TEMP INSTEAD OF EMPTYING TEMP
+once i logout i want window to reload and i want temp to be empty 
+-->
+
+<!-- <div>
+  <div>total savecart</div> dont have to append this part
+<img>
+title
+quantity
+check delievery date
+price
+remove button
+move to wishlist button
+</div>
+<div>
+<div>apply coupon</div>
+<div>check delievery date</div>
+<div>order summary
+  total
+
+</div>
+<div>checkout securely</div>
+</div> -->

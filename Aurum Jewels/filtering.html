@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="weight">
+        <option value="">Weight Ranges</option>
+        <option value="2-5">2-5 g</option>
+        <option value="5-10">5-10 g</option>
+        <option value="10-20">10-20 g</option>
+      </select>
+</body>
+<script>
+
+// sorting.addEventListener("change", ()=>{
+//     let dataTobefiltered;
+
+// if(priceDropdown.value==""){
+//     dataTobefiltered=fetcheddata
+// }
+// else{
+//     dataTobefiltered=pricearr;
+// }
+// // console.log(fetcheddata) 
+//  if(sorting.value==""){
+//    display(fetcheddata);
+  
+//  }
+//  else if(sorting.value=="lth"){
+//    filter1=true;
+//      let arr1=[...fetcheddata];
+//      arr1.sort((a,b)=>{
+//        return a.price-b.price
+//      })
+//      sortedarr=[...arr1];
+//      display(arr1)
+//    }
+//    else if(sorting.value=="htl"){
+//      filter1=true;
+//       let arr2=[...fetcheddata]
+//      arr2.sort((a,b)=>{
+//        return b.price-a.price
+//      })
+//      display(arr2)
+//      sortedarr=[...arr2];
+//    }
+//    else{
+//      display(fetcheddata)
+//      //can add more keys in the api if i get the time 
+//    }
+ 
+// })
+// let pricearr;
+//     //OG 
+//     const priceDropdown = document.getElementById('price');
+
+// priceDropdown.addEventListener('change', () => {
+//   const selectedPrice = priceDropdown.value;
+//   const filteredDatabyPrice = fetcheddata.filter(item => { //data is the api
+//     const itemPrice = item.price;
+//     if (selectedPrice === '') {
+//       return true; // Show all items if no price selected
+//     } else if (selectedPrice === 'Over ₹2,50,000') {
+//       return itemPrice > 250000;
+//     } else {
+//       const priceRange = selectedPrice.split('-');
+//       const minPrice = parseInt(priceRange[0].replace(',', ''));
+//       const maxPrice = parseInt(priceRange[1].replace(',', ''));
+//       return itemPrice >= minPrice && itemPrice <= maxPrice;
+//     }
+//   });
+//   pricearr=[...filteredDatabyPrice]
+//   display(filteredDatabyPrice);
+
+// });
+
+// sorting.addEventListener("change", ()=>{
+
+// // console.log(fetcheddata) 
+//  if(sorting.value==""){
+//    sortedarr=[...fetcheddata]
+//    display(fetcheddata);
+  
+//  }
+//  else if(sorting.value=="lth"){
+//    filter1=true;
+//      let arr1=[...fetcheddata];
+//      arr1.sort((a,b)=>{
+//        return a.price-b.price
+//      })
+//      sortedarr=[...arr1];
+//      display(arr1)
+//    }
+//    else if(sorting.value=="htl"){
+//      filter1=true;
+//       let arr2=[...fetcheddata]
+//      arr2.sort((a,b)=>{
+//        return b.price-a.price
+//      })
+//      display(arr2)
+//      sortedarr=[...arr2];
+//    }
+//    else{
+//      display(fetcheddata)
+//      //can add more keys in the api if i get the time 
+//    }
+ 
+// })
+    //if filter value is x and sorting value is htl
+    //if filter value is y and sorting value is lth
+    //if filter value is z and sorting value is ""
+    //if filter value is "" and sorting value is ""
+    //when sorting it clicked it will check for filter value and use all possible combinations 
+    //when filter is clicked it will check for sorting value and use all possible combinations
+
+
+    //CODE WHERE THE ARRAY KEPT REDUCING 
+//     let sorting= document.getElementById("sort");
+// let type=document.getElementById("type");
+// // let filter1= false; //sorting 
+// let sortedarr=[];
+// let pricearr=[];
+
+
+// sorting.addEventListener("change", ()=>{
+//   console.log(pricearr);
+//     let dataTobefiltered;
+
+// if(priceDropdown.value==""){
+//     dataTobefiltered=fetcheddata
+// }
+// else{
+//     dataTobefiltered=pricearr;
+// }
+// // console.log(fetcheddata) 
+//  if(sorting.value==""){
+//    display(dataTobefiltered);
+  
+//  }
+//  else if(sorting.value=="lth"){
+//    filter1=true;
+//      let arr1=[...dataTobefiltered];
+//      arr1.sort((a,b)=>{
+//        return a.price-b.price
+//      })
+//      sortedarr=[...arr1];
+//      display(arr1)
+//    }
+//    else if(sorting.value=="htl"){
+//      filter1=true;
+//       let arr2=[...dataTobefiltered]
+//      arr2.sort((a,b)=>{
+//        return b.price-a.price
+//      })
+//      display(arr2)
+//      sortedarr=[...arr2];
+//    }
+//    else{
+//      display(fetcheddata)
+//      //can add more keys in the api if i get the time 
+//    }
+//  pricearr=[];
+// })
+
+// const priceDropdown = document.getElementById('price');
+
+// priceDropdown.addEventListener('change', () => {
+//     let dataTobefiltered;
+    
+//    if(sorting.value==""){
+//      dataTobefiltered=fetcheddata
+//    }
+//    else{
+//      dataTobefiltered=sortedarr;
+//    }  
+//   const selectedPrice = priceDropdown.value;
+//   const filteredDatabyPrice = dataTobefiltered.filter(item => { //data is the api
+//     const itemPrice = item.price;
+//     if (selectedPrice === '') {
+//       return true; // Show all items if no price selected
+//     } else if (selectedPrice === 'Over ₹2,50,000') {
+//       return itemPrice > 250000;
+//     } else {
+//       const priceRange = selectedPrice.split('-');
+//       const minPrice = parseInt(priceRange[0].replace(',', ''));
+//       const maxPrice = parseInt(priceRange[1].replace(',', ''));
+//       return itemPrice >= minPrice && itemPrice <= maxPrice;
+//     }
+//   });
+//   pricearr=[...filteredDatabyPrice]
+//   console.log(sortedarr);
+//   console.log(pricearr); //price array gets empty when you slect another option
+//   //it keeps reducing i have to empty array ? if i change the value of price its basically taking the previously sorted array with the filter and running it through another price filter which will obvs show nothing 
+//   //if filter was selected and then sorting was selected thens orted arr has only the filter items now if i change the filter can i say that if price array is not empty and sorted arr is not empty then just take og fetched data and filter it 
+//   display(filteredDatabyPrice);
+
+// });
+
+let sorting= document.getElementById("sort");
+const priceDropdown = document.getElementById('price');
+
+
+
+
+sorting.addEventListener("change", ()=>{
+// console.log(fetcheddata) 
+ if(sorting.value==""){
+   checkPrice(fetcheddata);
+ }
+ else if(sorting.value=="lth"){
+     let arr1=[...fetcheddata];
+     arr1.sort((a,b)=>{
+       return a.price-b.price
+     })
+     checkPrice(arr1)
+   }
+   else if(sorting.value=="htl"){
+     filter1=true;
+      let arr2=[...dataTobefiltered]
+     arr2.sort((a,b)=>{
+       return b.price-a.price
+     })
+    checkPrice(arr2)
+   }
+   else{
+     checkPrice(fetcheddata);
+     //can add more keys in the api if i get the time 
+   }
+
+})
+
+function checkPrice(dataTobefiltered){
+    //take the array thats sorted and pass it through this instead of fetcheddata 
+    const selectedPrice = priceDropdown.value;
+  const filteredDatabyPrice = dataTobefiltered.filter(item => { //data is the api
+    const itemPrice = item.price;
+    if (selectedPrice === '') {
+      return true; // Show all items if no price selected
+    } else if (selectedPrice === 'Over ₹2,50,000') {
+      return itemPrice > 250000;
+    } else {
+      const priceRange = selectedPrice.split('-');
+      const minPrice = parseInt(priceRange[0].replace(',', ''));
+      const maxPrice = parseInt(priceRange[1].replace(',', ''));
+      return itemPrice >= minPrice && itemPrice <= maxPrice;
+    }
+  });
+  display(filteredDatabyPrice);
+}
+
+priceDropdown.addEventListener(()=>{
+    const selectedPrice = priceDropdown.value;
+  const filteredDatabyPrice = fetcheddata.filter(item => { //data is the api
+    const itemPrice = item.price;
+    if (selectedPrice === '') {
+      return true; // Show all items if no price selected
+    } else if (selectedPrice === 'Over ₹2,50,000') {
+      return itemPrice > 250000;
+    } else {
+      const priceRange = selectedPrice.split('-');
+      const minPrice = parseInt(priceRange[0].replace(',', ''));
+      const maxPrice = parseInt(priceRange[1].replace(',', ''));
+      return itemPrice >= minPrice && itemPrice <= maxPrice;
+    }
+  });
+  //call sorting function with filtereddatabyprice
+  checkSorting(filteredDatabyPrice)
+
+})
+
+
+function checkSorting(dataTobefiltered){  //pass the filtered arr through sort 
+    if(sorting.value==""){
+        display(dataTobefiltered)
+ }
+ else if(sorting.value=="lth"){
+     let arr1=[...dataTobefiltered];
+     arr1.sort((a,b)=>{
+       return a.price-b.price
+     })
+     display(arr1)
+   }
+   else if(sorting.value=="htl"){
+
+      let arr2=[...dataTobefiltered]
+     arr2.sort((a,b)=>{
+       return b.price-a.price
+     })
+    display(arr2)
+   }
+   else{
+     display(dataTobefiltered);
+     //can add more keys in the api if i get the time 
+   }
+ pricearr=[];
+}
+</script>
+</html>

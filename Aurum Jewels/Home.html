@@ -18,9 +18,9 @@
             text-align: center;
             background-color: #4F3267;
             color: white;
-            padding-top: 5px;
+            padding-top: 10px;
             padding-bottom: 3px;
-            
+            height:40px;
         }
         .nav{
             background-color: #f6eff6;
@@ -408,15 +408,31 @@ purple;
 .dropdown{
     margin-top: -20px;
 }
+@keyframes slide-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.new-text {
+  animation: slide-down 1s forwards;
+  animation-delay: 1s; /* add a delay to the new text animation */
+}
+
+#text{
+    font-size: smaller;
+    
+}
+
    </style>
 </head>
 <body>
     <div class="fixed">
         <div id="heading" class="slides">
-            <p style="font-weight: 100;">Aurum Jewels- A Tanishq Partnership</p> <!--change tagline-->
-            <!-- <div id="heading" class="slides">
-            <p style="font-weight: 100;">Introducing Aurum Jewels PoP! Plan your purchase &nbsp<span><p style="color:pink; font-weight: 100;"><a href="">here</a> </p> </span></p>
-            </div> -->
+            <p id="text">Aurum Jewels- A Tanishq Partnership</p> <!--change tagline-->
         </div>
         <div class="nav">
             <div id="logo">
@@ -681,20 +697,27 @@ purple;
               <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
 </body>
 <script>
-//     let slideIndex = 0; FIX THIS
-//     let slides=document.getElementsByClassName("slides");
+switchTexts();
 
-// showSlides();
-//     function showSlides(){ //cant i just change the text 
-//         for(let i=0; i<slides.length; i++){
-//             slides[i].style.display="none"
-//         }
-//         slideIndex++;
-//     if (slideIndex > slides.length) {slideIndex = 1}  
-//     slides[slideIndex-1].style.display = "block";  
-//   setTimeout(showSlides, 2000);
-        
-//     } 
+function switchTexts() {
+  const texts = ["Aurum Jewels -A Tanishq Parternship", "Introducing CaratLane PoP! Plan your purchase  <a href=''> here</a>"]; // array of texts to switch between
+  let currentTextIndex = 0; // index of the current text
+  const textElement = document.getElementById("text"); // get the text element
+
+  setInterval(() => {
+    currentTextIndex = (currentTextIndex + 1) % texts.length; // increment currentTextIndex and wrap around if it exceeds the array length
+    textElement.style.animation = "slide-down 1s forwards"; // animate the text sliding down
+    setTimeout(() => {
+      textElement.innerHTML = texts[currentTextIndex]; // set the HTML content to the new text
+      textElement.style.animation = ""; // reset the animation
+      const linkElement = textElement.querySelector("a"); // get the anchor element
+      if (linkElement) {
+        linkElement.style.color = "pink"; // set the color of the anchor text to red
+      }
+    }, 1000); // wait for the slide-down animation to complete before changing the text
+  }, 3000); // switch texts every 2 seconds
+}
+
 
     let DROPDOWN_DATA=[]
     localStorage.setItem("dropdown", JSON.stringify(DROPDOWN_DATA));
@@ -740,7 +763,7 @@ purple;
         //show title category and metal in drop down menu
         let filtered= fetched_data.filter((ele)=>{
             if(ele.title.toUpperCase().includes(search.value.toUpperCase()) || ele.category.toUpperCase().includes(search.value.toUpperCase()) || ele.metal.toUpperCase().includes(search.value.toUpperCase())){
-            return true
+            return true //return all the values that all equal () this will be a completely diff code tho because i will be returning all values that match so i will have to redirect accoridng to the value for example if cateory is selcted i will redirect to product page with that catgory filtered like i am doing in the drop down code 
         }
         else{
             return false
@@ -759,7 +782,7 @@ purple;
         for(let i=0; i<data.length; i++){
             let a= document.createElement("a");
             a.innerText=data[i].title;
-           
+           //here i could also change it to title AND category
             anchor.append(a)
             a.addEventListener("click",()=>{
                 let INDI=[];

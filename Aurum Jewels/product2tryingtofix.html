@@ -14,11 +14,412 @@
         margin: 0px;
         padding: 0px;
       }
+      #heading{
+        text-align: center;
+            background-color: #4F3267;
+            color: white;
+            padding-top: 10px;
+           padding-bottom: 50px;
+            height:40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+      }
+      #text{
+      font-size: smaller;
+      }
+    .nav{
+        background-color: #f6eff6;
+           width: 100%;
+        /* border:1px solid red; */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 40px;
+       margin-bottom: 20px;
+       padding-bottom: 50px;
+       padding-top: 20px;
+       font-size: smaller;
+       color: purple;
+    }
+    .nav > div{
+        /* border: 1px solid blue; */
+       width: 10%;
+        height: 40px;
+       
+    }
+    .nav > div:nth-child(9){
+        width: 2%;
+    }
+    .nav > div:nth-child(10){
+        width: 2%;
+    }
+    .nav > div:nth-child(1){
+        width: 2%;
+    }
+    #search-container{
+        width:17%;
+        /* border:1px solid blue; */
+        display: flex;
+        align-items: center;
+    }
+   
+    #search-container input{
+border: none;
+background: transparent;
+margin: 0;
+padding: 7px 8px;
+font-size: 14px;
+color: inherit;
+border: 1px solid transparent;
+border-radius: inherit;
+margin-bottom: -20px;
+}
+#search-container input::placeholder {
+color: #0c0c0c;
+}
+#searchlogo button{
+        display: inline;
+        width: 45px;
+        
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 2px;
+        text-indent: -999px;
+overflow: hidden;
+width: 40px;
+padding: 0;
+margin: 0;
+border: 1px solid transparent;
+border-radius: inherit;
+background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+cursor: pointer;
+opacity: 0.7;
+height: 40px;     
+margin-top: 5px;
+margin-left: -2px;
+}
+
+#searchlogo button:hover {
+opacity: 1;
+}
+
+#searchlogo button:focus,
+#search-container input:focus {
+box-shadow: 0 0 3px 0 #1183d6;
+border-color: #1183d6;
+outline: none;
+}
+    .nav img{
+        width:20px;
+        height: 20px;
+    }
+    #search-container img{
+        width: 100%;
+        
+      
+    }
+   .nav button{
+  
+    height: 100%;
+    display: flex;
+    align-items: center;
+   }
+    .categories{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: -20px;
+        background-color:#f2f2f2;
+        border: 1px solid rgb(187, 182, 182);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: smaller;
+    }
+    .categories>div:hover{
+        background-color: #eddfed;
+        text-decoration: underline;
+        text-decoration-color: #4F3267;
+    }
+    .footer{
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        width: 100%;
+        background-color: #f6eff6;
+        padding: 20px;
+    }
+    .footer>div{
+        width:30%;
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .footer > div>h6{
+        margin-bottom: 20px;
+    }
+    .footer>div>p{
+        font-size: smaller;
+    }
+    .footer>div button{
+        border-radius: 10px;
+        width: 50%;
+        height: 40px;
+        background-color: transparent;
+        border: 1px solid purple;
+        font-weight: bold;
+    }
+    #contactlogos{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #contactlogos>div{
+        width:10%;
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+    #contactlogos img{
+        width:100%;
+        height:30px;
+    }
+    .socials{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #f6eff6
+    }
+    .socials>div{
+        width:2%;
+        margin-right: 20px;
+    }
+    .socials img{
+        width: 100%;
+    }
+    .payments{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #f6eff6;
+    }
+    .payments>div{
+        width: 30%;
+        height:250px;
+        /* border: 1px solid black; */
+    }
+
+    #store{
+        border:1px solid purple;
+        height: 100px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #store>div{
+        /* not button they're anchor tags */
+        width:30%;
+        height:50%;
+        border: 1px solid black;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .visa{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .visa >div{
+        width:10%;
+        margin-top: -70px;
+    }
+    .visa img{
+        width: 100%;
+    }
+    .dropbtn {
+background-color: transparent;
+color: black;
+padding: 16px;
+font-size: 16px;
+border: none;
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: transparent;}
+
+.dropbtn1 {
+background-color: transparent;
+color: black;
+padding: 16px;
+border: none;
+}
+
+.dropdown1 {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content1 {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content1 a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+.dropdown-content1 p{
+margin-left: 10px;
+}
+.dropdown-content1 a:hover {background-color: #ddd;} 
+/* a TAG NOT NECCESARY ANYMORE */
+.dropdown-content1 p:hover {background-color: #ddd; font-weight: bold; cursor: pointer;}
+.dropdown1:hover .dropdown-content1 {display: block;}
+
+.dropdown1:hover .dropbtn1 {background-color: transparent;text-decoration: underline; text-decoration-color: purple}
+
+
+#profile{
+display: inline;
+
+/* width: 90px; 
+FIX this */
+}
+.box1{
+width: 100%;
+margin-top: 150px;
+}
+.box1 button{
+margin: 0px;
+padding: 0px;
+border:1px solid transparent;
+}
+.box1 img{
+width: 100%;
+}
+.box2{
+margin-top: 30px;
+width: 100%;
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap:20px;
+margin-bottom: 30px;
+}
+.box2 button{
+padding: 0;
+border: none;
+background: none;
+}
+.box2 img{
+width: 100%;
+}
+.fixed{
+position: fixed;
+        top: 0;
+        width: 100%;
+}
+
+
+.nav a:hover {
+font-weight: bold;
+
+} 
+a{
+ color: inherit; 
+ text-decoration:none;
+    }
+
+    /* .w3rcontainer{
+border: 1px solid 
+#cccfdb;
+border-radius: 2px;
+}  */
+.hover-underline-animation {
+display: inline-block;
+position: relative;
+
+}
+
+.hover-underline-animation:after {
+content: '';
+position: absolute;
+width: 100%;
+transform: scaleX(0);
+height: 2px;
+bottom: 0;
+left: 0;
+background-color: 
+purple;
+
+transform-origin: bottom right;
+transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover{
+color: black;
+}
+.hover-underline-animation:hover:after {
+
+transform: scaleX(1);
+transform-origin: bottom left;
+}
+#logo>img{
+height: 30px;
+width: 30px;
+border: 1px solid black;
+}
+.samecolor{
+padding: 40px;
+background-color: #f6eff6 ;
+/* border: 1px solid red; */
+}
+.dropdown-content1>h6{
+margin-left: 15px;
+margin-top: 15px;
+/* text-align: center; */
+}
+.dropdown{
+margin-top: -20px;
+}
       .headerphoto{
         width:100%;
       }
       .headerphoto img{
         width:100%
+
       }
       #container{
 
@@ -123,6 +524,7 @@ background: linear-gradient(to right, rgb(255, 220, 238) 0%, rgb(229, 200, 249) 
         font-size: 25px;
         display: flex;
         justify-content: space-between;
+        height: 180px;
         }
         /* img.setAttribute("class", "jewelphoto")
 wishlist.setAttribute("class", "wishlist");
@@ -579,6 +981,29 @@ margin-top: 15px;
 .dropdown{
 margin-top: -20px;
 }
+
+.nav{
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+.headerphoto{
+    margin-top: 180px;
+}
+@keyframes slide-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.new-text {
+  animation: slide-down 1s forwards;
+  animation-delay: 1s; /* add a delay to the new text animation */
+}
 .sortbar button{
     border: 1px solid rgb(238, 234, 234);
     padding: 10px;
@@ -592,6 +1017,136 @@ margin-top: -20px;
     </style>
 </head>
 <body>
+    <div class="fixed">
+        <div id="heading" class="slides">
+            <p id="text" style="font-weight: 100;">Aurum Jewels- A Tanishq Partnership</p> <!--change tagline-->
+        </div>
+    <div class="nav">
+        <div id="logo">
+            <img src="https://lh3.googleusercontent.com/pw/AMWts8Bac4w9fWbrZOq6Cq49K1tgFwjT3dc5RRfhrFg0F2KRdpblCitwXPiECfdRwPVlZRPRAve7RSxgTXw2MJoXSCsccygK-wigKKJrSRsh_3fJvzBTFDrOLWGm-A1AuLcaHGPGBGjIUNDoyFTLKgk-FWwAQj0gZh204AwYf5vGLodXt1T2CLX90WqMQM4ZsgFrAh0IUNWquyyTctMSWARYVwUz0Aqsag_bHTRx1dNkKdZ3HatoCPPuM81fVu4oJKjrPesFD4XeW1V4J40nGc00LZbE2cO5GIb9RAJUA0t49IKF33xP4gurrL6eDGiAuv2Tztyc_m8gfC2tabiZHn5EdS6tLAquaWipOfrv_tYn8ejM0PkS4cAe8py4t-gV4DO0R1c02rdF9x3EOYVl2oyPxlhqH1gGmczDYsrS6Pxu_gRcStfvb1tzSvTyr1iNZhNCChc3m7_zZ7qRnA7ZI_qFhJbV5u3J-S__Bc5jvvmOXfPgELdn4yPYJPEKqTmrvzj5XOlvLLhcq95FtJhvjZByO5jYu8vMFPtrxWLYyq395DHuFtDKW0ufFdLqE44oHfUtWKvkMERDj2XqxpFaZ8WQ7nAFzt7NzB0i0_lNVLWYg33p6VHbdL8_ikKor7FqAFXYEFs3Bfri6h3EaVazjMqZld9hKueI6y8sbkdwe31W04t7KE0FqRkzwXeEACAtKIyYE_Ax1WNSYs1Sj4UtqniukENbmeT1VYxYcIklh-DP_3kxY9wanEL9gS3R3qQfrw5nwTqWilb0gj0YvMUQtm2HRRM9GKUVeRdZwTphJtp9uMMNYoNkzqefa6iAZMFDVZWS0K_HQUTb1yVCekb0yp9zfKEztZKk0hXJon-qLITyfzvWD0StUgqQtZ-mP8Ob-55FmG1B70C_E4EbGwmzoEhUNe4=w500-h500-s-no?authuser=0" alt="error">
+        </div>
+        <div>
+            <a class="hover-underline-animation" href="">FREE TRY AT HOME</a>
+        </div>
+        <div>
+            <a class="hover-underline-animation" href="">FIND STORE</a>
+        </div>
+        <div>
+            <a class="hover-underline-animation" href="">PLAN OF PURCHASE</a>
+        </div>
+        <div>
+           <a class="hover-underline-animation" href=""> BUY DIGITAL GOLD </a>
+        </div>
+        <div id="search-container">
+            <div class="dropdown">
+         
+            <button class="dropbtn"  onclick="myFunction()"> <input type="text" id="search" placeholder="Search.." name="search"></button>
+            <div id="myDropdown" class="dropdown-content">
+               
+                <!-- check dropdown styling in css thats whats making it dissapear -->
+                <div id="anchor"></div>
+                <!-- //logonotworking MISSING COUNTRY LOGO-->
+                </div>
+            </div>
+        
+        <div id="searchlogo">
+            <button></button>
+        </div>
+    </div>
+        <div>
+            <a class="hover-underline-animation" href="">PINCODE</a>
+        </div>
+        
+            <div class="dropdown">
+                <button class="dropbtn hover-underline-animation"><img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="error"> </button>
+                <div class="dropdown-content">
+                  <a href="#" id="option1">Link 1</a>
+                  <a href="#" id="option2">Link 2</a>
+                  <a href="#" id="option3">Link 3</a>
+                </div>
+                </div>
+       <div>
+           <a class="hover-underline-animation"  href=""></ahref> <img src="https://cdn-icons-png.flaticon.com/128/2767/2767003.png" alt="error"></a>
+        </div>
+    <div>
+          <a class="hover-underline-animation" href="./cart.html">  <img src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png" alt="error"></a>
+        </div>
+       <div id="quan"></div>
+    </div>
+<div class="categories">
+    <div><button class="dropbtn1 checking hover-underline-animation ">NEW ARRIVALS</button> </div>
+    <div class="dropdown1">
+        <button class="dropbtn1 checking hover-underline-animation">RING</button> 
+        <!-- a href here as well on rings? -->
+        <div class="dropdown-content1">
+            <h6>SHOP BY STYLE</h6>
+            <p class="checking">ENGAGEMENT</p>  
+            <!-- make a new key just for dropdown and and then on product page check if key is empty or not  everytime this page loads the key refreshes-->
+            <p class="checking">COUPLE RINGS</p>
+            <p class="checking">CASUAL</p>
+            <p class="checking">ADJUSTABLE</p>
+            <p class="checking">SILVER STATEMENT RINGS</p>
+            <p class="checking">PLATINUM RINGS</p>
+            <p class="checking">COCKTAIL</p>
+            <p class="checking">BAND</p>
+            <p class="checking">PROMISE RINGS</p>
+            <p class="checking">SILVER</p> 
+          <!-- its a whole box with images -->
+        </div>
+        </div>
+    <div class="dropdown1">
+        <button class="dropbtn1 checking hover-underline-animation">EARRINGS</button>
+        <div class="dropdown-content1">
+          <h6>SHOP BY STYLE</h6>
+          <p class="checking">STUDS</p>
+          <p class="checking">JHUMKAS</p>
+          <p class="checking">EARCUFFS</p>
+          <p class="checking">PEARL EARRINGS</p>
+          <p class="checking">CHANDBALI EARRINGS</p>
+          <p class="checking">DROPS</p>
+          <p class="checking">HOOPS AND HUGGIES</p>
+          <p class="checking">SUIDHAGA</p>
+          <p class="checking">GOLD EARRINGS</p>
+          <p class="checking">SILVER EARRINGS</p> 
+        </div>
+    </div>
+    <div class="dropdown1">
+       <button class="dropbtn1 checking hover-underline-animation">BRACELETS AND BANGLES</button>
+       <div class="dropdown-content1">
+        <h6>SHOP BY STYLE</h6>
+        <p class="checking">CHAIN BRACELETS</p>
+        <p class="checking">FLEXIBLE BRACELETS</p>
+        <p class="checking">LIGHTWEAR BANGLES</p>
+        <p class="checking">GOLD BANGLES</p>
+        <p class="checking">KIDS BRACELETS</p>
+        <p class="checking">OVAL BRACELETS</p>
+        <p class="checking">MANGALSUTRA BRACELETS</p>
+        <p class="checking">DIAMOND BANGLES</p>
+        <p class="checking">22kt BRACELETS</p>
+        <p class="checking">SILVER BRACELETS</p> 
+    </div>
+    </div>
+    <div class="dropdown1">
+        <button class="dropbtn1 checking hover-underline-animation">SOLITAIRES</button>
+        <div class="dropdown-content1">
+            <h6>SHOP BY STYLE</h6>
+            <p class="checking">RINGS</p>
+            <p class="checking">PENDANTS</p>
+            <p class="checking">NECKLACE</p>
+            <p class="checking">MEN'S SOLITAIRE</p>
+            <p class="checking">EARRINGS</p>
+            <p class="checking">BRIDAL SET</p>
+            <p class="checking">MANGALSUTRA</p>
+        </div>
+    </div>
+    <div><button class="dropbtn1 checking hover-underline-animation">MANGALSUTRA</button></div>
+    <div><button class="dropbtn1 checking hover-underline-animation">OTHER JEWELLERY</button></div>
+    <!-- need to still do drop down for other jewellery and gifting -->
+    <div><button class="dropbtn1 checking hover-underline-animation">GIFTING</button></div>
+</div>
+</div>
+
+
     <div class="headerphoto">
       <img src="https://assets.cltstatic.com/images/responsive/DefaultBanner_Desktop.webp" alt="error">
     </div>
@@ -604,7 +1159,7 @@ margin-top: -20px;
       <button id="newArrival">New In</button>
     </div>
     <div>
-      <select id="sort" >
+      <select id="sort">
         <option value="">Sort By</option>
         <option value="discount">Discount</option>
         <option value="htl">Price-High to Low</option>
@@ -767,21 +1322,221 @@ margin-top: -20px;
       </div>
 </body>
 <script>
-  
+    //NAV START
+    switchTexts();
+
+//     sorting.addEventListener("change", ()=>{
+     
+// // console.log(fetcheddata) 
+//  if(sorting.value==""){
+//    checkPrice(fetcheddata);
+//  }
+//  else if(sorting.value=="lth"){
+//      let arr1=[...fetcheddata];
+//      arr1.sort((a,b)=>{
+//        return a.price-b.price
+//      })
+//      checkPrice(arr1)
+//    }
+//    else if(sorting.value=="htl"){
+//      filter1=true;
+//       let arr2=[...fetcheddata]
+//      arr2.sort((a,b)=>{
+//        return b.price-a.price
+//      })
+//     checkPrice(arr2)
+//    }
+//    else{
+//      checkPrice(fetcheddata);
+//      //can add more keys in the api if i get the time 
+//    }
+
+// })
+
+function switchTexts() {
+  const texts = ["Aurum Jewels -A Tanishq Parternship", "Introducing CaratLane PoP! Plan your purchase  <a href=''> here</a>"]; // array of texts to switch between
+  let currentTextIndex = 0; // index of the current text
+  const textElement = document.getElementById("text"); // get the text element
+
+  setInterval(() => {
+    currentTextIndex = (currentTextIndex + 1) % texts.length; // increment currentTextIndex and wrap around if it exceeds the array length
+    textElement.style.animation = "slide-down 1s forwards"; // animate the text sliding down
+    setTimeout(() => {
+      textElement.innerHTML = texts[currentTextIndex]; // set the HTML content to the new text
+      textElement.style.animation = ""; // reset the animation
+      const linkElement = textElement.querySelector("a"); // get the anchor element
+      if (linkElement) {
+        linkElement.style.color = "pink"; // set the color of the anchor text to red
+      }
+    }, 1000); // wait for the slide-down animation to complete before changing the text
+  }, 3000); // switch texts every 2 seconds
+}
+    let DROPDOWN_DATA2=[]
+        localStorage.setItem("dropdown", JSON.stringify(DROPDOWN_DATA2));
+        
+        let checking=document.querySelectorAll(".checking") //CHANGE HERE
+        for(let i=0; i<checking.length; i++){
+        checking[i].addEventListener("click",()=>{ //LOOP HERE 
+            DROPDOWN_DATA2=[];
+    
+            DROPDOWN_DATA2.push(checking[i].innerText)
+           // console.log(DROPDOWN_DATA);
+           localStorage.setItem("dropdown", JSON.stringify(DROPDOWN_DATA2));
+           //now here it should redirect to product page 
+           window.location.href = "./product.html"; // add hover over the word and fix alignment 
+        })
+    }
+       let option1= document.getElementById("option1");
+       let option2=document.getElementById("option2");
+       let option3= document.getElementById("option3");
+        let search=document.getElementById("search");
+        let myDropdown=document.getElementById("myDropdown")
+        let anchor=document.getElementById("anchor")
+        let searchlogo=document.getElementById("searchlogo");
+    
+        let fetched_data2;
+        getData();
+    
+        function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // searchlogo.addEventListener("click",()=>{
+    //     functionality to search logo -will direct to product page with includes filter 
+    //     check if fetched data includes search.value. whatever has search.value will get pushed in a seperate array NOT INDI and then the products can display in a seperate product page just for this -you cant do that because in the actual page they have just redirected to product page with filter selected
+    //     let INDI=[];
+    //     INDI.push(data[i])
+    //                 localStorage.setItem("indi", JSON.stringify(INDI));
+    //                 window.location.href = "./individualproduct.html";
+    // })
+        search.addEventListener("input", ()=>{
+            let filtered= fetched_data2.filter((ele)=>{
+                if(ele.title.toUpperCase().includes(search.value.toUpperCase()) || ele.category.toUpperCase().includes(search.value.toUpperCase()) || ele.metal.toUpperCase().includes(search.value.toUpperCase())){
+                return true
+            }
+            else{
+                return false
+            }
+            })
+            result(filtered);
+        })
+    
+        function result(data){
+            anchor.innerHTML=null;
+            for(let i=0; i<data.length; i++){
+                let a= document.createElement("a");
+                a.innerText=data[i].title;
+               
+                anchor.append(a)
+                a.addEventListener("click",()=>{
+                    let INDI=[];
+                    INDI.push(data[i]) 
+                    localStorage.setItem("indi", JSON.stringify(INDI));
+                    //window.location.href = "./individualproduct.html";
+                })
+                 a.href="./individualproduct.html";
+            }
+            //if you click on a i wanna redirect to individual product page 
+        }
+    
+        //create function to display filtered in an achor tag list and call it everytime when keyup?
+        let HOMEPAGEDATA2=localStorage.getItem("homepagedata")
+        if(HOMEPAGEDATA2==null){
+            HOMEPAGEDATA2=[]
+        }
+        else{
+            HOMEPAGEDATA2=JSON.parse(HOMEPAGEDATA2);
+        }
+    
+        function getData(){
+            fetch("https://mocki.io/v1/a68534c2-bdbd-4487-b0e8-5e9aea69ed78").then((res)=>{
+                return res.json()
+            }).then((data)=>{
+                fetched_data2=[...data];
+    
+            }).catch((error)=>{
+                console.log(error)
+            })
+        }
+       
+       //FUNCTION FOR CART QUANITITY 
+       
+    
+       let CART_DATA2=JSON.parse(localStorage.getItem("cart")) || []
+        let TEMP2=JSON.parse(localStorage.getItem("temp")) || []
+      
+        if(HOMEPAGEDATA2.length!=0){
+            show(CART_DATA2)
+           
+        }
+        else{
+            show(TEMP2)
+            //console.log(1)
+        }
+    
+    // Close the dropdown menu if the user clicks outside of it
+    function show(data){ //will call it with cartdata? or i could just store cart quantity in a key with user email and say that if it corresponds show that value
+        //if homepage data is null you need to call it with temp
+      let quan=document.getElementById("quan")
+          let quantitytotal=0;
+          for(let m=0; m<data.length; m++){
+            if(HOMEPAGEDATA2.length!=0){
+                //console.log("yes")
+              if(data[m].email==HOMEPAGEDATA2[1]){
+               // console.log(data[m].email)
+                quantitytotal=quantitytotal+Number((data[m].quantity));
+              }
+           
+        }
+        else{
+            quantitytotal=quantitytotal+Number((data[m].quantity));
+           }
+    }
+           //console.log(data[m].quantity)
+      quan.innerText=quantitytotal
+        //console.log(quantitytotal) //now append this to cart logo in nav bar
+         
+        }
+    
+    if(HOMEPAGEDATA2.length==0){ //used to be ==[]
+        option1.innerText="Sign Up" 
+        option1.addEventListener("click",()=>{
+            window.location.href = "./register.html";
+        })
+        option2.innerText="Login"
+        option2.addEventListener("click",()=>{
+            window.location.href = "./login1.html";
+        })
+        option3.style.display="none";
+    }
+    else{
+        option1.innerText=`Welcome ${HOMEPAGEDATA2[0]}`; //can add profile option here
+        option2.innerText=HOMEPAGEDATA2[1]
+        option3.innerText="Log Out"
+    }
+    option3.addEventListener("click",()=>{
+        HOMEPAGEDATA2=[];
+        localStorage.setItem("homepagedata", JSON.stringify(HOMEPAGEDATA2))
+        window.location.href = "./product2tryingtofix.html"; //this will change 
+    })
+    //NAV END
+
+
+
+
   //IDK HOW THIS IS STILL SHOWING THE SELECTED PRODUCTS ON REDIRECT BUT NOT WHEN YOU RELOAD BUT IT IS 
   //THIS WILL GO AWAY IF I DO AUTO SELECT FILTER BECAUSE THEN THE VALUE WILL CHANGE ACCORIDNG TO FILTER SELECTED 
-
+// let count=0;
 // window.addEventListener("load", (event) => {
- 
+//   count++;
 // //if drop down is not empty i want that the next reload should empty drop down data and then refresh count in storage again
 //   console.log(count);
 //   DROPDOWN_DATA=[]
 //   localStorage.setItem("dropdown",JSON.stringify(DROPDOWN_DATA))
-//   //console.log(DROPDOWN_DATA)
+//   console.log(DROPDOWN_DATA)
 // });
 
 let container= document.getElementById("container");
-
 
 
 let HOMEPAGEDATA=localStorage.getItem("homepagedata")
@@ -810,17 +1565,16 @@ window.addEventListener("load", (event) => {
     
 let fetcheddata;
 let DROPDOWN_DATA=JSON.parse(localStorage.getItem("dropdown")) || []
-
 window.addEventListener("load", (event) => {
  
  //if drop down is not empty i want that the next reload should empty drop down data and then refresh count in storage again
  
    let DROPDOWN_DATA_CHANGE=[]
    localStorage.setItem("dropdown",JSON.stringify(DROPDOWN_DATA_CHANGE))
-   //console.log(DROPDOWN_DATA)
+   console.log(DROPDOWN_DATA)
  });
- 
- let displayAlldatawhenclickedonAllbutton;
+
+let displayAlldatawhenclickedonAllbutton;
 
  let res2= fetch("https://mocki.io/v1/a68534c2-bdbd-4487-b0e8-5e9aea69ed78")
     res2.then((res)=>{
@@ -829,6 +1583,7 @@ window.addEventListener("load", (event) => {
       //console.log(data[1].category)
        //console.log(data)
        displayAlldatawhenclickedonAllbutton=[...data]
+
        if(DROPDOWN_DATA.length==1){
        //console.log(DROPDOWN_DATA);
         let dropdowndata= data.filter((ele)=>{
@@ -844,7 +1599,7 @@ window.addEventListener("load", (event) => {
         //  console.log(DROPDOWN_DATA)
         // console.log(dropdowndata)
         display(dropdowndata) //now show it with the filter selected or the filter name 
-        fetcheddata=[...dropdowndata]
+        fetcheddata=[...dropdowndata] //why am i doing this --->so it can filter it 
        }
        else{
         display(data)
@@ -859,12 +1614,12 @@ window.addEventListener("load", (event) => {
     let all=document.getElementById("all");
 all.addEventListener("click", ()=>{
     display(displayAlldatawhenclickedonAllbutton)
-   fetcheddata=displayAlldatawhenclickedonAllbutton;
-   if(newArrival.style.backgroundColor=="purple"){
+    fetcheddata=displayAlldatawhenclickedonAllbutton;
+    if(newArrival.style.backgroundColor=="purple"){
         newArrival.style.backgroundColor="white"
     newArrival.style.color="black"
     }
-    
+
    if(all.style.backgroundColor=="purple"){
     all.style.backgroundColor="white"
     all.style.color="black"
@@ -883,7 +1638,6 @@ let type=document.getElementById("type");
 
 
 const priceDropdown = document.getElementById('price');
-
 
 
 
@@ -913,6 +1667,9 @@ sorting.addEventListener("change", ()=>{
    }
 
 })
+
+
+
 
 priceDropdown.addEventListener("change",()=>{
 
@@ -1050,7 +1807,7 @@ const genderDropdown= document.getElementById("shopFor");
 const newArrival= document.getElementById("newArrival");
 
 newArrival.addEventListener("click", function() {
-  if(all.style.backgroundColor=="purple"){
+    if(all.style.backgroundColor=="purple"){
         all.style.backgroundColor="white"
     all.style.color="black"
     }
@@ -1079,6 +1836,7 @@ const filterbynewArrival = fetcheddata.filter(item => {
  newArrival.style.backgroundColor="purple"
  newArrival.style.color="white"
 }
+
 });
 
 
@@ -1192,28 +1950,3 @@ container.append(div);
 }
 </script>
 </html>
-<!-- div
-Image 
-on image put the extra key value 
-Add to wishlist on image (wish list key)
-Price
-check delievery date
-Title
-Add to cart (cart key or do i put an array in user object data??)
-two buttons for book try at home and live video call
-div -->
-
-<!-- features
-    FIX THIS PAGE OMG
-  You have to put things inside divs(wishlist extra etc for media queries to work)
-    whatever filters are applied are appearing  in a box  
-add to cart 
-add to wishlist
-both pages 
-individial page looping
-cant add same twice
-search 
-filter NOT DONE
-sort 
-linking this with nav bar  -->
-

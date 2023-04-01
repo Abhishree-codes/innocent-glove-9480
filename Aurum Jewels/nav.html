@@ -18,7 +18,7 @@
         color: white;
         padding-top: 5px;
         padding-bottom: 3px;
-        
+        height: 40px;
     }
     .nav{
         background-color: #f6eff6;
@@ -642,17 +642,17 @@ margin-top: -20px;
 </body>
 <script>
     
-        let DROPDOWN_DATA=[]
-        localStorage.setItem("dropdown", JSON.stringify(DROPDOWN_DATA));
+        let DROPDOWN_DATA2=[]
+        localStorage.setItem("dropdown", JSON.stringify(DROPDOWN_DATA2));
         
         let checking=document.querySelectorAll(".checking") //CHANGE HERE
         for(let i=0; i<checking.length; i++){
         checking[i].addEventListener("click",()=>{ //LOOP HERE 
-            DROPDOWN_DATA=[];
+            DROPDOWN_DATA2=[];
     
-            DROPDOWN_DATA.push(checking[i].innerText)
+            DROPDOWN_DATA2.push(checking[i].innerText)
            // console.log(DROPDOWN_DATA);
-           localStorage.setItem("dropdown", JSON.stringify(DROPDOWN_DATA));
+           localStorage.setItem("dropdown", JSON.stringify(DROPDOWN_DATA2));
            //now here it should redirect to product page 
            window.location.href = "./product.html"; // add hover over the word and fix alignment 
         })
@@ -665,7 +665,7 @@ margin-top: -20px;
         let anchor=document.getElementById("anchor")
         let searchlogo=document.getElementById("searchlogo");
     
-        let fetched_data;
+        let fetched_data2;
         getData();
     
         function myFunction() {
@@ -673,18 +673,15 @@ margin-top: -20px;
     }
     
     // searchlogo.addEventListener("click",()=>{
-    //     //functionality to search logo -will direct to product page with includes filter 
-    //     //check if fetched data includes search.value. whatever has search.value will get pushed in a seperate array NOT INDI and then the products can display in a seperate product page just for this -you cant do that because in the actual page they have just redirected to product page with filter selected
-    //     //let INDI=[];
-    //     // INDI.push(data[i])
-    //     //             localStorage.setItem("indi", JSON.stringify(INDI));
-    //     //             window.location.href = "./individualproduct.html";
+    //     functionality to search logo -will direct to product page with includes filter 
+    //     check if fetched data includes search.value. whatever has search.value will get pushed in a seperate array NOT INDI and then the products can display in a seperate product page just for this -you cant do that because in the actual page they have just redirected to product page with filter selected
+    //     let INDI=[];
+    //     INDI.push(data[i])
+    //                 localStorage.setItem("indi", JSON.stringify(INDI));
+    //                 window.location.href = "./individualproduct.html";
     // })
         search.addEventListener("input", ()=>{
-            //console.log(fetched_data);
-            //take data from api and put it an array and run a loop over array 
-            //show title category and metal in drop down menu
-            let filtered= fetched_data.filter((ele)=>{
+            let filtered= fetched_data2.filter((ele)=>{
                 if(ele.title.toUpperCase().includes(search.value.toUpperCase()) || ele.category.toUpperCase().includes(search.value.toUpperCase()) || ele.metal.toUpperCase().includes(search.value.toUpperCase())){
                 return true
             }
@@ -692,11 +689,6 @@ margin-top: -20px;
                 return false
             }
             })
-          //console.log(filtered)
-            //display filtered.title in drop down menu
-            //can create a function for displaying filtered.title in drop down menu and call it here
-            //now its working but the search input box is not fixed (functionality is fine but fix formatting)
-            //functionality to drop down menu items - they will direct to product page with a filter
             result(filtered);
         })
     
@@ -709,9 +701,7 @@ margin-top: -20px;
                 anchor.append(a)
                 a.addEventListener("click",()=>{
                     let INDI=[];
-                    INDI.push(data[i]) //would be different for if category or metal matches? (could just remove category and metal condition)
-                    //ITS NOT RIDRECTING TO INDIVIDUAL PRODUCT PAGE ITS REDIRECTING TO PRODUCT PAGE WITH JUST SELECTED THING SHOWING 
-                    //push data[i] into array and push into key and then ? fetch from key in homepage and call display() if key is empty fetch from api directly?
+                    INDI.push(data[i]) 
                     localStorage.setItem("indi", JSON.stringify(INDI));
                     //window.location.href = "./individualproduct.html";
                 })
@@ -721,19 +711,19 @@ margin-top: -20px;
         }
     
         //create function to display filtered in an achor tag list and call it everytime when keyup?
-        let HOMEPAGEDATA=localStorage.getItem("homepagedata")
-        if(HOMEPAGEDATA==null){
-            HOMEPAGEDATA=[]
+        let HOMEPAGEDATA2=localStorage.getItem("homepagedata")
+        if(HOMEPAGEDATA2==null){
+            HOMEPAGEDATA2=[]
         }
         else{
-            HOMEPAGEDATA=JSON.parse(HOMEPAGEDATA);
+            HOMEPAGEDATA2=JSON.parse(HOMEPAGEDATA2);
         }
     
         function getData(){
             fetch("https://mocki.io/v1/a68534c2-bdbd-4487-b0e8-5e9aea69ed78").then((res)=>{
                 return res.json()
             }).then((data)=>{
-                fetched_data=[...data];
+                fetched_data2=[...data];
     
             }).catch((error)=>{
                 console.log(error)
@@ -743,15 +733,15 @@ margin-top: -20px;
        //FUNCTION FOR CART QUANITITY 
        
     
-       let CART_DATA=JSON.parse(localStorage.getItem("cart")) || []
-        let TEMP=JSON.parse(localStorage.getItem("temp")) || []
+       let CART_DATA2=JSON.parse(localStorage.getItem("cart")) || []
+        let TEMP2=JSON.parse(localStorage.getItem("temp")) || []
       
-        if(HOMEPAGEDATA.length!=0){
-            show(CART_DATA)
+        if(HOMEPAGEDATA2.length!=0){
+            show(CART_DATA2)
            
         }
         else{
-            show(TEMP)
+            show(TEMP2)
             //console.log(1)
         }
     
@@ -761,9 +751,9 @@ margin-top: -20px;
       let quan=document.getElementById("quan")
           let quantitytotal=0;
           for(let m=0; m<data.length; m++){
-            if(HOMEPAGEDATA.length!=0){
+            if(HOMEPAGEDATA2.length!=0){
                 //console.log("yes")
-              if(data[m].email==HOMEPAGEDATA[1]){
+              if(data[m].email==HOMEPAGEDATA2[1]){
                // console.log(data[m].email)
                 quantitytotal=quantitytotal+Number((data[m].quantity));
               }
@@ -779,7 +769,7 @@ margin-top: -20px;
          
         }
     
-    if(HOMEPAGEDATA.length==0){ //used to be ==[]
+    if(HOMEPAGEDATA2.length==0){ //used to be ==[]
         option1.innerText="Sign Up" 
         option1.addEventListener("click",()=>{
             window.location.href = "./register.html";
@@ -791,13 +781,13 @@ margin-top: -20px;
         option3.style.display="none";
     }
     else{
-        option1.innerText=`Welcome ${HOMEPAGEDATA[0]}`; //can add profile option here
-        option2.innerText=HOMEPAGEDATA[1]
+        option1.innerText=`Welcome ${HOMEPAGEDATA2[0]}`; //can add profile option here
+        option2.innerText=HOMEPAGEDATA2[1]
         option3.innerText="Log Out"
     }
     option3.addEventListener("click",()=>{
-        HOMEPAGEDATA=[];
-        localStorage.setItem("homepagedata", JSON.stringify(HOMEPAGEDATA))
+        HOMEPAGEDATA2=[];
+        localStorage.setItem("homepagedata", JSON.stringify(HOMEPAGEDATA2))
         window.location.href = "./Home.html";
     })
         //If home page data==[] show option to sign up or login and link to those pages 

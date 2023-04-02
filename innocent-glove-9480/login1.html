@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+        /* NAV STYLING STARTS HERE  */
+         #heading{
+        text-align: center;
+            background-color: #4F3267;
+            color: white;
+            padding-top: 10px;
+           padding-bottom: 50px;
+            height:40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+      }
+      #text{
+      font-size: smaller;
+      }
+    .nav{
+        background-color: #f6eff6;
+           width: 100%;
+        /* border:1px solid red; */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 40px;
+       margin-bottom: 20px;
+       padding-bottom: 50px;
+       padding-top: 20px;
+       font-size: smaller;
+       color: purple;
+    }
+    .nav > div{
+        /* border: 1px solid blue; */
+       width: 10%;
+        height: 40px;
+       
+    }
+    .nav > div:nth-child(9){
+        width: 2%;
+    }
+    .nav > div:nth-child(10){
+        width: 2%;
+    }
+    .nav > div:nth-child(1){
+        width: 2%;
+    }
+    #search-container{
+        width:17%;
+        /* border:1px solid blue; */
+        display: flex;
+        align-items: center;
+    }
+   
+    #search-container input{
+border: none;
+background: transparent;
+margin: 0;
+padding: 7px 8px;
+font-size: 14px;
+color: inherit;
+border: 1px solid transparent;
+border-radius: inherit;
+margin-bottom: -20px;
+}
+#search-container input::placeholder {
+color: #0c0c0c;
+}
+#searchlogo button{
+        display: inline;
+        width: 45px;
+        
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 2px;
+        text-indent: -999px;
+overflow: hidden;
+width: 40px;
+padding: 0;
+margin: 0;
+border: 1px solid transparent;
+border-radius: inherit;
+background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+cursor: pointer;
+opacity: 0.7;
+height: 40px;     
+margin-top: 5px;
+margin-left: -2px;
+}
+
+#searchlogo button:hover {
+opacity: 1;
+}
+
+#searchlogo button:focus,
+#search-container input:focus {
+box-shadow: 0 0 3px 0 #1183d6;
+border-color: #1183d6;
+outline: none;
+}
+    .nav img{
+        width:20px;
+        height: 20px;
+    }
+    #search-container img{
+        width: 100%;
+        
+      
+    }
+   .nav button{
+  
+    height: 100%;
+    display: flex;
+    align-items: center;
+   }
+    .categories{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: -20px;
+        background-color:#f2f2f2;
+        border: 1px solid rgb(187, 182, 182);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: smaller;
+    }
+    .categories>div:hover{
+        background-color: #eddfed;
+        text-decoration: underline;
+        text-decoration-color: #4F3267;
+    }
+    .footer{
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        width: 100%;
+        background-color: #f6eff6;
+        padding: 20px;
+    }
+    .footer>div{
+        width:30%;
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .footer > div>h6{
+        margin-bottom: 20px;
+    }
+    .footer>div>p{
+        font-size: smaller;
+    }
+    .footer>div button{
+        border-radius: 10px;
+        width: 50%;
+        height: 40px;
+        background-color: transparent;
+        border: 1px solid purple;
+        font-weight: bold;
+    }
+    #contactlogos{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #contactlogos>div{
+        width:10%;
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+    #contactlogos img{
+        width:100%;
+        height:30px;
+    }
+    .socials{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #f6eff6
+    }
+    .socials>div{
+        width:2%;
+        margin-right: 20px;
+    }
+    .socials img{
+        width: 100%;
+    }
+    .payments{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #f6eff6;
+    }
+    .payments>div{
+        width: 30%;
+        height:250px;
+        /* border: 1px solid black; */
+    }
+
+    #store{
+        border:1px solid purple;
+        height: 100px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #store>div{
+        /* not button they're anchor tags */
+        width:30%;
+        height:50%;
+        border: 1px solid black;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .visa{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .visa >div{
+        width:10%;
+        margin-top: -70px;
+    }
+    .visa img{
+        width: 100%;
+    }
+    .dropbtn {
+background-color: transparent;
+color: black;
+padding: 16px;
+font-size: 16px;
+border: none;
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: transparent;}
+
+.dropbtn1 {
+background-color: transparent;
+color: black;
+padding: 16px;
+border: none;
+}
+
+.dropdown1 {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content1 {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content1 a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+.dropdown-content1 p{
+margin-left: 10px;
+}
+.dropdown-content1 a:hover {background-color: #ddd;} 
+/* a TAG NOT NECCESARY ANYMORE */
+.dropdown-content1 p:hover {background-color: #ddd; font-weight: bold; cursor: pointer;}
+.dropdown1:hover .dropdown-content1 {display: block;}
+
+.dropdown1:hover .dropbtn1 {background-color: transparent;text-decoration: underline; text-decoration-color: purple}
+
+
+#profile{
+display: inline;
+
+/* width: 90px; 
+FIX this */
+}
+.box1{
+width: 100%;
+margin-top: 150px;
+}
+.box1 button{
+margin: 0px;
+padding: 0px;
+border:1px solid transparent;
+}
+.box1 img{
+width: 100%;
+}
+.box2{
+margin-top: 30px;
+width: 100%;
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap:20px;
+margin-bottom: 30px;
+}
+.box2 button{
+padding: 0;
+border: none;
+background: none;
+}
+.box2 img{
+width: 100%;
+}
+.fixed{
+position: fixed;
+        top: 0;
+        width: 100%;
+}
+
+
+.nav a:hover {
+font-weight: bold;
+
+} 
+a{
+ color: inherit; 
+ text-decoration:none;
+    }
+
+    /* .w3rcontainer{
+border: 1px solid 
+#cccfdb;
+border-radius: 2px;
+}  */
+.hover-underline-animation {
+display: inline-block;
+position: relative;
+
+}
+
+.hover-underline-animation:after {
+content: '';
+position: absolute;
+width: 100%;
+transform: scaleX(0);
+height: 2px;
+bottom: 0;
+left: 0;
+background-color: 
+purple;
+
+transform-origin: bottom right;
+transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover{
+color: black;
+}
+.hover-underline-animation:hover:after {
+
+transform: scaleX(1);
+transform-origin: bottom left;
+}
+#logo>img{
+height: 30px;
+width: 30px;
+border: 1px solid black;
+}
+.samecolor{
+padding: 40px;
+background-color: #f6eff6 ;
+/* border: 1px solid red; */
+}
+.dropdown-content1>h6{
+margin-left: 15px;
+margin-top: 15px;
+/* text-align: center; */
+}
+.dropdown{
+margin-top: -20px;
+}
+      .headerphoto{
+        width:100%;
+      }
+      .headerphoto img{
+        width:100%
+
+      }
+      
+        
+        
+       
+
+#heading{
+        text-align: center;
+        background-color: #4F3267;
+        color: white;
+        padding-top: 5px;
+        padding-bottom: 3px;
+        
+    }
+    .nav{
+        background-color: #f6eff6;
+       width: 100%;
+    /* border:1px solid red; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+   margin-bottom: 20px;
+   padding-bottom: 50px;
+   padding-top: 20px;
+   font-size: smaller;
+   color: purple;
+    }
+    .nav > div{
+        /* border: 1px solid blue; */
+       width: 10%;
+        height: 40px;
+       
+    }
+    .nav > div:nth-child(9){
+        width: 2%;
+    }
+    .nav > div:nth-child(10){
+        width: 2%;
+    }
+    .nav > div:nth-child(1){
+        width: 2%;
+    }
+    #search-container{
+        width:17%;
+        /* border:1px solid blue; */
+        display: flex;
+        align-items: center;
+    }
+   
+    #search-container input{
+border: none;
+background: transparent;
+margin: 0;
+padding: 7px 8px;
+font-size: 14px;
+color: inherit;
+border: 1px solid transparent;
+border-radius: inherit;
+margin-bottom: -20px;
+}
+#search-container input::placeholder {
+color: #0c0c0c;
+}
+#searchlogo button{
+        display: inline;
+        width: 45px;
+        
+        padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 2px;
+        text-indent: -999px;
+overflow: hidden;
+width: 40px;
+padding: 0;
+margin: 0;
+border: 1px solid transparent;
+border-radius: inherit;
+background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+cursor: pointer;
+opacity: 0.7;
+height: 40px;     
+margin-top: 5px;
+margin-left: -2px;
+}
+
+#searchlogo button:hover {
+opacity: 1;
+}
+
+#searchlogo button:focus,
+#search-container input:focus {
+box-shadow: 0 0 3px 0 #1183d6;
+border-color: #1183d6;
+outline: none;
+}
+    .nav img{
+        width:20px;
+        height: 20px;
+    }
+    #search-container img{
+        width: 100%;
+        
+      
+    }
+   .nav button{
+  
+    height: 100%;
+    display: flex;
+    align-items: center;
+   }
+    .categories{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: -20px;
+        background-color:#f2f2f2;
+        border: 1px solid rgb(187, 182, 182);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: smaller;
+    }
+    .categories>div:hover{
+        background-color: #eddfed;
+        text-decoration: underline;
+        text-decoration-color: #4F3267;
+    }
+    .footer{
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        width: 100%;
+        background-color: #f6eff6;
+        padding: 20px;
+    }
+    .footer>div{
+        width:30%;
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .footer > div>h6{
+        margin-bottom: 20px;
+    }
+    .footer>div>p{
+        font-size: smaller;
+    }
+    .footer>div button{
+        border-radius: 10px;
+        width: 50%;
+        height: 40px;
+        background-color: transparent;
+        border: 1px solid purple;
+        font-weight: bold;
+    }
+    #contactlogos{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #contactlogos>div{
+        width:10%;
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+    #contactlogos img{
+        width:100%;
+        height:30px;
+    }
+    .socials{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #f6eff6
+    }
+    .socials>div{
+        width:2%;
+        margin-right: 20px;
+    }
+    .socials img{
+        width: 100%;
+    }
+    .payments{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #f6eff6;
+    }
+    .payments>div{
+        width: 30%;
+        height:250px;
+        /* border: 1px solid black; */
+    }
+
+    #store{
+        border:1px solid purple;
+        height: 100px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #store>div{
+        /* not button they're anchor tags */
+        width:30%;
+        height:50%;
+        border: 1px solid black;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .visa{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .visa >div{
+        width:10%;
+        margin-top: -70px;
+    }
+    .visa img{
+        width: 100%;
+    }
+    .dropbtn {
+background-color: transparent;
+color: black;
+padding: 16px;
+font-size: 16px;
+border: none;
+}
+
+.dropdown {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: transparent;}
+
+.dropbtn1 {
+background-color: transparent;
+color: black;
+padding: 16px;
+border: none;
+}
+
+.dropdown1 {
+position: relative;
+display: inline-block;
+}
+
+.dropdown-content1 {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content1 a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+.dropdown-content1 p{
+margin-left: 10px;
+}
+.dropdown-content1 a:hover {background-color: #ddd;} 
+/* a TAG NOT NECCESARY ANYMORE */
+.dropdown-content1 p:hover {background-color: #ddd; font-weight: bold; cursor: pointer;}
+.dropdown1:hover .dropdown-content1 {display: block;}
+
+.dropdown1:hover .dropbtn1 {background-color: transparent;text-decoration: underline; text-decoration-color: purple}
+
+
+#profile{
+display: inline;
+
+/* width: 90px; 
+FIX this */
+}
+.box1{
+width: 100%;
+margin-top: 150px;
+}
+.box1 button{
+margin: 0px;
+padding: 0px;
+border:1px solid transparent;
+}
+.box1 img{
+width: 100%;
+}
+.box2{
+margin-top: 30px;
+width: 100%;
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap:20px;
+margin-bottom: 30px;
+}
+.box2 button{
+padding: 0;
+border: none;
+background: none;
+}
+.box2 img{
+width: 100%;
+}
+.fixed{
+position: fixed;
+        top: 0;
+        width: 100%;
+}
+
+
+.nav a:hover {
+font-weight: bold;
+
+} 
+a{
+ color: inherit; 
+ text-decoration:none;
+    }
+
+    /* .w3rcontainer{
+border: 1px solid 
+#cccfdb;
+border-radius: 2px;
+}  */
+.hover-underline-animation {
+display: inline-block;
+position: relative;
+
+}
+
+.hover-underline-animation:after {
+content: '';
+position: absolute;
+width: 100%;
+transform: scaleX(0);
+height: 2px;
+bottom: 0;
+left: 0;
+background-color: 
+purple;
+
+transform-origin: bottom right;
+transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover{
+color: black;
+}
+.hover-underline-animation:hover:after {
+
+transform: scaleX(1);
+transform-origin: bottom left;
+}
+#logo>img{
+height: 30px;
+width: 30px;
+border: 1px solid black;
+}
+.samecolor{
+padding: 40px;
+background-color: #f6eff6 ;
+/* border: 1px solid red; */
+}
+.dropdown-content1>h6{
+margin-left: 15px;
+margin-top: 15px;
+/* text-align: center; */
+}
+.dropdown{
+margin-top: -20px;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+.headerphoto{
+    margin-top: 180px;
+}
+@keyframes slide-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.new-text {
+  animation: slide-down 1s forwards;
+  animation-delay: 1s; /* add a delay to the new text animation */
+}
+        /* NAV STYLING ENDS HERE  */ 
+        #error{
+            color: red;
+        }
+        .loginContent{
+            /* border: 1px solid black; */
+            width: 50%;
+            margin: auto;
+            margin-top: 270px;
+            text-align: center;
+        }
+        .loginContent button{
+            padding: 10px;
+    border: 1px solid black;
+    background-color: transparent;
+        }
+        .loginContent button:hover{
+            cursor: pointer;
+        }
+        .loginContent input{
+            height: 30px;
+            width: 30%;
+        }
+        #continue{
+            margin-top: 10px;
+            width: 30%;
+            border-radius: 10px;
+        }
+        #facebook{
+    height: 40px;
+    padding: 10px;
+    border: 1px solid rgb(173, 169, 173);
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+#facebook p{
+    color: rgb(173, 169, 173);
+    font-weight:bold;
+}
+#google p{
+    color: rgb(173, 169, 173);
+    font-weight:bold;  
+}
+#facebook img{
+    width:20%;
+    height: 20px;
+    margin-left: 10px;
+}
+#google{
+    height: 40px;
+    padding: 10px;
+    border: 1px solid rgb(173, 169, 173);
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#google img{
+    width:20%;
+    height: 20px;
+    margin-left: 10px;
+}
+.loginContent>div{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+}
+
+.continuebutton button{
+    display: block;
+    margin: auto;
+}
+#continue{
+    width: 70%;
+}
+#email{
+    width: 250px;
+}
+#continue{
+    background: linear-gradient(to right, rgb(222, 87, 229), rgb(136, 99, 251));;
+    border: 1px solid transparent;
+    color: white;
+    font-weight: bold;
+}
+
+/* changes made to nax to fix alignment */
+.nav{
+    height: 0px;
+}
+#heading{
+    height: 32px;
+}
+    </style>
+</head>
+<body>
+    <div class="fixed">
+        <div id="heading" class="slides">
+            <p id="text" style="font-weight: 100;">Aurum Jewels- A Tanishq Partnership</p> <!--change tagline-->
+        </div>
+    <div class="nav">
+        <div id="logo">
+          <a href="./index.html"> <img src="https://lh3.googleusercontent.com/pw/AMWts8BngHjnPQLtIXjEZHPVq7q9-2H-J_PxKsiDIwcuhJUDllKhEWQaIZ44wxteWZPeYK9ZWx2h1RBUiOPxg1j9-9BtcnJoZoj4muU8M7aCaPwVLlD1DIqwPY0WoAQt7LbG5UeW-99EvCJNbMHd5heFLE572Hx71fYMZaoCZy19sTwZPqzMMxUiaAVlwe2bXwxhHvzYqHGc5ZySMBgUkQe5fojlQtmkZsrxivpD3UMxGGSJbcPpKJ8MUJjHHk-rYoMAam1U9X0ISrcFX8zGmhC0BoVhshHoX_6bdpyhoydjvFnW02QHbhS7q5i5n8jsSgJdYz0mdYf3__5qIZG1joUjp087M6i2V1bRwxnPbG9oUvJKSotBfOHf2ET-Gjbzg3XbHzS4BIenShY5OU8h8zClZ15_j95gHXMprdYVv6mPU7x7ny1QXnT3Ie5K-sAvFPseorFXe3L3GIWJATcBPUikG7K5eKV-7rf5Ivmx0DKpJfAOo7c2DFaaCw0z5CSp1OWDGY4aKgK5hhQwdv3Q1pz4liOFJs5NPaASmmt9zwheFOz99baJkngay3aNDnSB-zzfv9tH0QKYyMWaGR7Y8-fBkau2F7wU_viVP57o0h7L_kxgxuPrellE_7pav_790E5zEcNtYpMjzUhzhBsv8SbOPQ8S3B44biW4LXdOEyG_Uklh3gCm8VpmRCWPR620TEroHtLZ08SFObWZmLwEbB3qPH_1JJJ4g8hUi-jc_pDKMQ8_mBPR6Jmhv7hYHwyYxsyG1Bluq_bPRMYZMbZXN7v5jKVbPSgrPNHod0rqqD5A_A52KbQlxSrNeBUf67pSS3myhvizP9wdAjbjhtuc2FYsFAipfbU-8hHcsTWW0PZmfE1aUmw9nWRTRgAE1NcXp6Y6z-bq4RqKcYimIyaL9iWe2qo=w480-h480-s-no?authuser=0" alt="error"></a>
+        </div>
+        <div>
+            <a class="hover-underline-animation" href="">FREE TRY AT HOME</a>
+        </div>
+        <div>
+            <a class="hover-underline-animation" href="">FIND STORE</a>
+        </div>
+        <div>
+            <a class="hover-underline-animation" href="">PLAN OF PURCHASE</a>
+        </div>
+        <div>
+           <a class="hover-underline-animation" href=""> BUY DIGITAL GOLD </a>
+        </div>
+        <div id="search-container">
+            <div class="dropdown">
+         
+            <button class="dropbtn" style="margin-bottom: 20px;" onclick="myFunction()"> <input type="text" id="search" placeholder="Search.." name="search"></button>
+            <div id="myDropdown" class="dropdown-content">
+               
+                <!-- check dropdown styling in css thats whats making it dissapear -->
+                <div id="anchor"></div>
+                <!-- //logonotworking MISSING COUNTRY LOGO-->
+                </div>
+            </div>
+        
+        <div id="searchlogo"  style="margin-bottom: 27px;">
+            <button></button>
+        </div>
+    </div>
+        <div>
+            <a class="hover-underline-animation" href="">PINCODE</a>
+        </div>
+        
+            <div class="dropdown">
+                <button class="dropbtn hover-underline-animation"><img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" alt="error"> </button>
+                <div class="dropdown-content">
+                  <a href="#" id="option1">Link 1</a>
+                  <a href="#" id="option2">Link 2</a>
+                  <a href="#" id="option3">Link 3</a>
+                </div>
+                </div>
+       <div>
+           <a class="hover-underline-animation"  href=""></ahref> <img src="https://cdn-icons-png.flaticon.com/128/2767/2767003.png" alt="error"></a>
+        </div>
+    <div>
+          <a class="hover-underline-animation" href="./cart.html">  <img src="https://cdn-icons-png.flaticon.com/128/2838/2838838.png" alt="error"></a>
+        </div>
+       <div id="quan"></div>
+    </div>
+<div class="categories">
+    <div><button class="dropbtn1 checking hover-underline-animation ">NEW ARRIVALS</button> </div>
+    <div class="dropdown1">
+        <button class="dropbtn1 checking hover-underline-animation">RING</button> 
+        <!-- a href here as well on rings? -->
+        <div class="dropdown-content1">
+            <h6>SHOP BY STYLE</h6>
+            <p class="checking">ENGAGEMENT</p>  
+            <!-- make a new key just for dropdown and and then on product page check if key is empty or not  everytime this page loads the key refreshes-->
+            <p class="checking">COUPLE RINGS</p>
+            <p class="checking">CASUAL</p>
+            <p class="checking">ADJUSTABLE</p>
+            <p class="checking">SILVER STATEMENT RINGS</p>
+            <p class="checking">PLATINUM RINGS</p>
+            <p class="checking">COCKTAIL</p>
+            <p class="checking">BAND</p>
+            <p class="checking">PROMISE RINGS</p>
+            <p class="checking">SILVER</p> 
+          <!-- its a whole box with images -->
+        </div>
+        </div>
+    <div class="dropdown1">
+        <button class="dropbtn1 checking hover-underline-animation">EARRINGS</button>
+        <div class="dropdown-content1">
+          <h6>SHOP BY STYLE</h6>
+          <p class="checking">STUDS</p>
+          <p class="checking">JHUMKAS</p>
+          <p class="checking">EARCUFFS</p>
+          <p class="checking">PEARL EARRINGS</p>
+          <p class="checking">CHANDBALI EARRINGS</p>
+          <p class="checking">DROPS</p>
+          <p class="checking">HOOPS AND HUGGIES</p>
+          <p class="checking">SUIDHAGA</p>
+          <p class="checking">GOLD EARRINGS</p>
+          <p class="checking">SILVER EARRINGS</p> 
+        </div>
+    </div>
+    <div class="dropdown1">
+       <button class="dropbtn1 checking hover-underline-animation">BRACELETS AND BANGLES</button>
+       <div class="dropdown-content1">
+        <h6>SHOP BY STYLE</h6>
+        <p class="checking">CHAIN BRACELETS</p>
+        <p class="checking">FLEXIBLE BRACELETS</p>
+        <p class="checking">LIGHTWEAR BANGLES</p>
+        <p class="checking">GOLD BANGLES</p>
+        <p class="checking">KIDS BRACELETS</p>
+        <p class="checking">OVAL BRACELETS</p>
+        <p class="checking">MANGALSUTRA BRACELETS</p>
+        <p class="checking">DIAMOND BANGLES</p>
+        <p class="checking">22kt BRACELETS</p>
+        <p class="checking">SILVER BRACELETS</p> 
+    </div>
+    </div>
+    <div class="dropdown1">
+        <button class="dropbtn1 checking hover-underline-animation">SOLITAIRES</button>
+        <div class="dropdown-content1">
+            <h6>SHOP BY STYLE</h6>
+            <p class="checking">RINGS</p>
+            <p class="checking">PENDANTS</p>
+            <p class="checking">NECKLACE</p>
+            <p class="checking">MEN'S SOLITAIRE</p>
+            <p class="checking">EARRINGS</p>
+            <p class="checking">BRIDAL SET</p>
+            <p class="checking">MANGALSUTRA</p>
+        </div>
+    </div>
+    <div><button class="dropbtn1 checking hover-underline-animation">MANGALSUTRA</button></div>
+    <div><button class="dropbtn1 checking hover-underline-animation">OTHER JEWELLERY</button></div>
+    <!-- need to still do drop down for other jewellery and gifting -->
+    <div><button class="dropbtn1 checking hover-underline-animation">GIFTING</button></div>
+</div>
+</div>
+    <div class="loginContent">
+    <h1>Login to Aurum Jewels</h1>
+    <div style="box-sizing: border-box; padding-left: 50px; padding-right: 50px;">
+    <button id="facebook">
+        <p> FACEBOOK</p>
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="error">
+    </button>
+    <button id="google">
+        <p>GOOGLE</p>
+    <img src="https://cdn-icons-png.flaticon.com/512/300/300221.png" alt="error">
+    </button>
+    </div>
+    <p>OR</p>
+    <h1>Enter Email</h1>
+    <input id="email" type="email">
+    <p style="display: none;" id="error">Enter Valid Email Address</p>
+    <div class="continuebutton">
+    <button id="continue">CONTINUE</button>
+    </div>
+    <p>OR</p>
+    <p>New to Aurum Jewels? <a href="./register.html" style="color: purple;">Create an Account</a> </p>
+    </div>
+    <div class="samecolor">
+    <div class="footer">
+        <div id="one">
+            <h6>Know Your Jewellery</h6>
+            <p>DIAMOND GUIDE</p>
+            <p>JEWELLERY GUIDE</p>
+            <p>GEMSTONES GUIDE</p>
+            <p>GOLD RATE</p>
+            <p>DIGITAL GOLD</p>
+        </div>
+        <div id="two">
+            <h6>Aurum Jewels Advantage</h6>
+            <p>15-DAY RETURNS</p>
+            <p>FREE SHIPPING</p>
+            <p>FINANCING OPTIONS</p>
+            <p>OLD GOLD EXCHANGE</p>
+        </div>
+        <div id="three">
+            <h6>Customer Service</h6>
+            <p>RETURN POLICY</p>
+            <p>ORDER STATUS</p>
+        </div>
+        <div id="four">
+            <h6>About Us</h6>
+            <p>OUR STORY</p>
+            <p>PRESS</p>
+            <p>BLOG</p>
+            <p>CAREERS</p>
+        </div>
+         <div id="five">
+            <h6>Contact Us</h6>
+            <div id="contactlogos">
+                <div id="contactlogos1">
+                <img src="https://cdn-icons-png.flaticon.com/512/483/483947.png" alt="error">
+            </div>
+            <div id="contactlogos1">
+                <img src="https://cdn-icons-png.flaticon.com/512/589/589708.png" alt="error">
+            </div>
+            <div id="contactlogos1">
+                <img src="https://cdn-icons-png.flaticon.com/512/1384/1384023.png" alt="error">
+            </div>
+        </div>
+            <p>24x7 Enquiry Support(ALL DAYS)</p>
+            <p>General: <a href>Contactus@Aurumjewels.com</a> </p>
+            <p>Corporate:<a href>B2B@Aurumjewels.com</a> </p>
+            <p>HR: <a href>Careers@Aurumjewels.com</a> </p>
+            <p>Greivance: <a href>Click Here</a> </p>
+            <button>Find a Store</button>
+            </div>
+        </div>
+        <div class="socials">
+            <div>
+            <a href><img src="https://cdn-icons-png.flaticon.com/512/20/20837.png" alt="error"></a>
+            </div>
+            <div>
+            <a href><img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="error"></a>
+            </div>
+            <div>
+            <a href><img src="https://cdn-icons-png.flaticon.com/512/466/466953.png" alt="error"></a>
+            </div>
+            <div>
+            <a href><img src="https://cdn-icons-png.flaticon.com/512/10124/10124356.png" alt="error"></a>
+            </div>
+            <div>
+            <a href><img src="https://cdn-icons-png.flaticon.com/512/665/665212.png" alt="error"></a>
+            </div>
+        </div>
+        <div class="payments">
+            <div class="app">
+                <p>Download the Aurum Jewels App</p>
+                <div id="store">
+                    <div><a href="">Google Play</a> </div>
+                    <div><a href="">App Store</a> </div>
+                </div>
+            </div>
+            <div class="visa">
+                <div>
+                  <a href=""><img src="https://cdn-icons-png.flaticon.com/512/5968/5968219.png" alt="error"></a>
+                </div>
+                <div>
+                   <a href=""><img src="https://cdn-icons-png.flaticon.com/512/10096/10096351.png" alt="error"></a>
+                </div>
+                <div>
+                  <a href="" ><img src="https://cdn-icons-png.flaticon.com/512/10101/10101223.png" alt="error"></a>
+                </div>
+                <div>
+                   <a href=""><img src="https://cdn-icons-png.flaticon.com/512/196/196566.png" alt="error"></a>
+                </div>
+                <div>
+                   <a href=""><img src="https://cdn-icons-png.flaticon.com/512/39/39223.png" alt="error"></a>
+                </div>
+                <div>
+                  <a href="" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMGqW8hK-LWUO4kxFgYiyvAPfAasV0p7qL6NGpkS3U&s" alt="error"></a>
+                </div>
+            </div>
+            </div>
+        </div>
+</body>
+<script>
+     //NAV SCRIPTS STARTS HERE
+    //NAV START
+    switchTexts();
+
+
+
+function switchTexts() {
+  const texts = ["Aurum Jewels -A Tanishq Parternship", "Introducing CaratLane PoP! Plan your purchase  <a href=''> here</a>"]; // array of texts to switch between
+  let currentTextIndex = 0; // index of the current text
+  const textElement = document.getElementById("text"); // get the text element
+
+  setInterval(() => {
+    currentTextIndex = (currentTextIndex + 1) % texts.length; // increment currentTextIndex and wrap around if it exceeds the array length
+    textElement.style.animation = "slide-down 1s forwards"; // animate the text sliding down
+    setTimeout(() => {
+      textElement.innerHTML = texts[currentTextIndex]; // set the HTML content to the new text
+      textElement.style.animation = ""; // reset the animation
+      const linkElement = textElement.querySelector("a"); // get the anchor element
+      if (linkElement) {
+        linkElement.style.color = "pink"; // set the color of the anchor text to red
+      }
+    }, 1000); // wait for the slide-down animation to complete before changing the text
+  }, 3000); // switch texts every 2 seconds
+}
+//window load count=1 if count is 1 
+    let DROPDOWN_DATA2=[]
+    //if dropdown key is empty only then run this, if it
+    //     localStorage.setItem("dropdown", JSON.stringify(DROPDOWN_DATA2));
+        
+        let checking=document.querySelectorAll(".checking") //CHANGE HERE
+        for(let i=0; i<checking.length; i++){
+        checking[i].addEventListener("click",()=>{ //LOOP HERE 
+            DROPDOWN_DATA2=[];
+            //console.log(DROPDOWN_DATA2);
+            DROPDOWN_DATA2.push(checking[i].innerText)
+           // console.log(DROPDOWN_DATA);
+           localStorage.setItem("dropdown", JSON.stringify(DROPDOWN_DATA2));
+           //now here it should redirect to product page 
+           window.location.href = "./product2tryingtofix.html"; // add hover over the word and fix alignment 
+        })
+     }
+
+       let option1= document.getElementById("option1");
+       let option2=document.getElementById("option2");
+       let option3= document.getElementById("option3");
+        let search=document.getElementById("search");
+        let myDropdown=document.getElementById("myDropdown")
+        let anchor=document.getElementById("anchor")
+        let searchlogo=document.getElementById("searchlogo");
+    
+        let fetched_data2;
+        getData();
+    
+        function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // searchlogo.addEventListener("click",()=>{
+    //     functionality to search logo -will direct to product page with includes filter 
+    //     check if fetched data includes search.value. whatever has search.value will get pushed in a seperate array NOT INDI and then the products can display in a seperate product page just for this -you cant do that because in the actual page they have just redirected to product page with filter selected
+    //     let INDI=[];
+    //     INDI.push(data[i])
+    //                 localStorage.setItem("indi", JSON.stringify(INDI));
+    //                 window.location.href = "./individualproduct.html";
+    // })
+        search.addEventListener("input", ()=>{
+            let filtered= fetched_data2.filter((ele)=>{
+                if(ele.title.toUpperCase().includes(search.value.toUpperCase()) || ele.category.toUpperCase().includes(search.value.toUpperCase()) || ele.metal.toUpperCase().includes(search.value.toUpperCase())){
+                return true
+            }
+            else{
+                return false
+            }
+            })
+            result(filtered);
+        })
+    
+        function result(data){
+            anchor.innerHTML=null;
+            for(let i=0; i<data.length; i++){
+                let a= document.createElement("a");
+                a.innerText=data[i].title;
+               
+                anchor.append(a)
+                a.addEventListener("click",()=>{
+                    let INDI=[];
+                    INDI.push(data[i]) 
+                    localStorage.setItem("indi", JSON.stringify(INDI));
+                    //window.location.href = "./individualproduct.html";
+                })
+                 a.href="./individualproduct.html";
+            }
+            //if you click on a i wanna redirect to individual product page 
+        }
+    
+        //create function to display filtered in an achor tag list and call it everytime when keyup?
+        let HOMEPAGEDATA2=localStorage.getItem("homepagedata")
+        if(HOMEPAGEDATA2==null){
+            HOMEPAGEDATA2=[]
+        }
+        else{
+            HOMEPAGEDATA2=JSON.parse(HOMEPAGEDATA2);
+        }
+    
+        function getData(){
+            fetch("https://mocki.io/v1/a68534c2-bdbd-4487-b0e8-5e9aea69ed78").then((res)=>{
+                return res.json()
+            }).then((data)=>{
+                fetched_data2=[...data];
+    
+            }).catch((error)=>{
+                console.log(error)
+            })
+        }
+       
+       //FUNCTION FOR CART QUANITITY 
+       
+    
+       let CART_DATA2=JSON.parse(localStorage.getItem("cart")) || []
+        let TEMP2=JSON.parse(localStorage.getItem("temp")) || []
+      
+        if(HOMEPAGEDATA2.length!=0){
+            show(CART_DATA2)
+           
+        }
+        else{
+            show(TEMP2)
+            //console.log(1)
+        }
+    
+    // Close the dropdown menu if the user clicks outside of it
+    function show(data){ //will call it with cartdata? or i could just store cart quantity in a key with user email and say that if it corresponds show that value
+        //if homepage data is null you need to call it with temp
+      let quan=document.getElementById("quan")
+          let quantitytotal=0;
+          for(let m=0; m<data.length; m++){
+            if(HOMEPAGEDATA2.length!=0){
+                //console.log("yes")
+              if(data[m].email==HOMEPAGEDATA2[1]){
+               // console.log(data[m].email)
+                quantitytotal=quantitytotal+Number((data[m].quantity));
+              }
+           
+        }
+        else{
+            quantitytotal=quantitytotal+Number((data[m].quantity));
+           }
+    }
+           //console.log(data[m].quantity)
+      quan.innerText=quantitytotal
+        //console.log(quantitytotal) //now append this to cart logo in nav bar
+         //i think i have to call this everytime i click all cart?
+        }
+
+    
+    if(HOMEPAGEDATA2.length==0){ //used to be ==[]
+        option1.innerText="Sign Up" 
+        option1.addEventListener("click",()=>{
+            window.location.href = "./register.html";
+        })
+        option2.innerText="Login"
+        option2.addEventListener("click",()=>{
+            window.location.href = "./login1.html";
+        })
+        option3.style.display="none";
+    }
+    else{
+        option1.innerText=`Welcome ${HOMEPAGEDATA2[0]}`; //can add profile option here
+        option2.innerText=HOMEPAGEDATA2[1]
+        option3.innerText="Log Out"
+    }
+    option3.addEventListener("click",()=>{
+        HOMEPAGEDATA2=[];
+        localStorage.setItem("homepagedata", JSON.stringify(HOMEPAGEDATA2))
+        window.location.href = "./product2tryingtofix.html"; //this will change 
+    })
+    //NAV SCRIPT ENDS HERE 
+
+    let email=document.getElementById("email");
+    let con= document.getElementById("continue");
+    let error= document.getElementById("error");
+
+    let EMAIL=[];
+   
+    let USER_DATA= localStorage.getItem("userdata")
+    if(USER_DATA==null){
+        USER_DATA=[]
+    }
+    else{
+        USER_DATA= JSON.parse(USER_DATA);
+    }
+    email.addEventListener("input", ()=>{
+        ValidateEmail(email)
+    })
+
+    function ValidateEmail(input) { //input would be email
+
+var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+if (input.value.match(validRegex)) {
+    input.style.border="1px solid black"
+    error.style.display="none"
+    return true;
+
+} else {
+input.style.border= "1px solid red"
+error.style.display="block"
+return false;
+
+}
+
+}
+    con.addEventListener("click",()=>{
+        let flag1=false
+        for(let i=0; i<USER_DATA.length; i++){
+            if(USER_DATA[i].email==email.value){
+                //store in local storage here? with login1 key
+                flag1=true
+            }
+        }
+        if(flag1==false){
+            alert("Account does not exist")
+            window.location.href = "./register.html";
+            //redirect to register
+        }
+        else{
+            EMAIL.push(email.value);
+            localStorage.setItem("email", JSON.stringify(EMAIL));
+            //rediret to login2
+           // window.location.href = "./login2.html";
+            
+        }
+        if(flag1==true){
+            window.location.href = "./login2.html";
+        }
+    })
+</script>
+</html>

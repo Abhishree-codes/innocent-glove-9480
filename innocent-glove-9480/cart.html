@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     *{
+      box-sizing: border-box;
+     }
+     
+     body{
+      margin: 0px;
+      padding: 0px;
+     }
+       body>.one{
+          display: flex;
+          justify-content: flex-start;
+          width:100%;
+          background-color: rgb(239, 234, 234);
+          padding-left: 60px;
+          font-weight: 300;
+          font-size: 20px;
+          /* padding-right: 520px;
+          padding-left: 50px; */
+          /* border:1px solid black; */
+      
+
+        }
+        body>div:nth-child(3){
+          display: flex;
+          justify-content: space-evenly;
+          width:100%;
+          background-color: rgb(239, 234, 234);
+          /* border: 1px solid black; */
+        }
+        #cont{
+            width: 60%;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            /* border:1px solid black; */
+            gap:20px;
+           
+        }
+        #cont img{
+            width: 100%;
+            height: 300px;
+          border: 1px solid rgb(228, 223, 223);
+          border-radius: 5px;
+        }
+        #cont >div{
+         background-color: white;
+         border-radius: 5px;
+          border: 1px solid  rgb(228, 223, 223);
+          display: grid;
+          grid-template-columns: repeat(3,1fr);
+          height: 325px;
+        }
+        #cont>div>div:nth-child(1){
+          padding: 10px;
+        }
+        #cont>div>div:nth-child(2){
+          padding: 20px;
+           /* border: 1px solid blue; */
+          
+        }
+        #cont>div>div:nth-child(2) button{
+         /* border: 1px solid blue; */
+         width: 50px;
+         margin: 10px;
+         border: 1px solid purple;
+         border-radius: 5px;
+         background-color: purple;
+         color: white;
+         box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        }
+        #cont>div>div:nth-child(2) button{
+          cursor: pointer;
+        }
+        #cont>div>div:nth-child(3) button {
+         display: block;
+         margin-top: 50px;
+         padding: 5px;
+         background-color: transparent;
+         border: 1px solid grey;
+         border-radius: 5px;
+         /* border: 1px solid blue; */
+        }
+        #cont>div>div:nth-child(3) button:hover{
+          cursor: pointer;
+        }
+       #checkout{
+        width: 28%;
+        /* border: 1px solid black; */
+        display: flex;
+        height: 400px;
+        flex-direction: column;
+        justify-content: space-around;
+       }
+       #checkout>div{
+        border: 1px solid rgb(214, 211, 211);
+        background-color: white;
+        border-radius: 5px;
+
+       }
+       #checkout button{
+        width:100%;
+        padding: 10px;
+        border: 1px solid transparent;
+        color: white;
+        background-color: purple;
+        border-radius: 5px;
+       }
+       #checkout button:hover{
+        cursor: pointer;
+       }
+       #totaldetails >div{
+        display: flex;
+        justify-content: space-between;
+        padding-left:10px;
+        padding-right: 10px;
+       }
+       #pin{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+       }
+       #apply{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 10px;
+        padding-right: 10px;
+       }
+       .footer{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        width: 100%;
+        background-color: #f6eff6;
+        padding: 20px;
+    }
+    .footer>div{
+        width:30%;
+        /* border: 1px solid black; */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .footer > div>h6{
+        margin-bottom: 20px;
+    }
+    .footer>div>p{
+        font-size: smaller;
+    }
+    .footer>div button{
+        border-radius: 10px;
+        width: 50%;
+        height: 40px;
+        background-color: transparent;
+        border: 1px solid purple;
+        font-weight: bold;
+    }
+    #contactlogos{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #contactlogos>div{
+        width:10%;
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+    #contactlogos img{
+        width:100%;
+        height:30px;
+    }
+    .socials{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background-color: #f6eff6
+    }
+    .socials>div{
+        width:2%;
+        margin-right: 20px;
+    }
+    .socials img{
+        width: 100%;
+    }
+    .payments{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #f6eff6;
+    }
+    .payments>div{
+        width: 30%;
+        height:250px;
+        /* border: 1px solid black; */
+    }
+
+    #store{
+        border:1px solid purple;
+        height: 100px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    #store>div{
+        /* not button they're anchor tags */
+        width:30%;
+        height:50%;
+        border: 1px solid black;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .visa{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .visa >div{
+        width:10%;
+        margin-top: -70px;
+    }
+    .visa img{
+        width: 100%;
+    }
+       .samecolor{
+padding: 40px;
+background-color: #f6eff6 ;
+/* border: 1px solid red; */
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+
+.new-text {
+  animation: slide-down 1s forwards;
+  animation-delay: 1s; /* add a delay to the new text animation */
+}
+.fixed{
+position: fixed;
+        top: 0;
+        width: 100%;
+}
+
+#heading{
+  width: 100%;
+text-align: center;
+            background-color: #4F3267;
+            color: white;
+            /* padding-top: 10px;
+           padding-bottom: 50px; */
+            height:40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+}
+
+#navforCart{
+  
+  width: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  height: 60px;
+}
+#navforCart > div{
+  width: 30%;
+  /* border: 1px solid red; */
+  height: 100%;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+ font-family:  MuliSemiBold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#navforCart img{
+  width:100%;
+  height:100%
+}
+.one{
+  margin-top: 100px;
+}
+#logo img{
+height: 100%;
+width: 50px;
+border: 1px solid black;
+}
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: 
+purple;
+
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.hover-underline-animation:hover{
+    color: black;
+}
+.hover-underline-animation:hover:after {
+
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.hover-underline-animation{
+  text-align: center;
+  color: gray;
+  /* border: 1px solid black; */
+}
+.hover-underline-animation p{
+  margin: auto;
+}
+.hover-underline-animation:hover{
+  cursor: pointer;
+  color: black;
+}
+#navforCart{
+  padding-right: 400px;
+}
+    </style>
+</head>
+<body>
+
+  <div class="fixed">
+    <div id="heading" class="slides">
+        <p id="text" style="font-weight: 100;">Aurum Jewels- A Tanishq Partnership</p> <!--change tagline-->
+    </div>
+    <div id="navforCart">
+      <!-- logo
+      shopping cart tab (with no of items )
+      try at home cart  -->
+      <div id="logo">
+        <a href="./index.html"> <img src="https://lh3.googleusercontent.com/pw/AMWts8BngHjnPQLtIXjEZHPVq7q9-2H-J_PxKsiDIwcuhJUDllKhEWQaIZ44wxteWZPeYK9ZWx2h1RBUiOPxg1j9-9BtcnJoZoj4muU8M7aCaPwVLlD1DIqwPY0WoAQt7LbG5UeW-99EvCJNbMHd5heFLE572Hx71fYMZaoCZy19sTwZPqzMMxUiaAVlwe2bXwxhHvzYqHGc5ZySMBgUkQe5fojlQtmkZsrxivpD3UMxGGSJbcPpKJ8MUJjHHk-rYoMAam1U9X0ISrcFX8zGmhC0BoVhshHoX_6bdpyhoydjvFnW02QHbhS7q5i5n8jsSgJdYz0mdYf3__5qIZG1joUjp087M6i2V1bRwxnPbG9oUvJKSotBfOHf2ET-Gjbzg3XbHzS4BIenShY5OU8h8zClZ15_j95gHXMprdYVv6mPU7x7ny1QXnT3Ie5K-sAvFPseorFXe3L3GIWJATcBPUikG7K5eKV-7rf5Ivmx0DKpJfAOo7c2DFaaCw0z5CSp1OWDGY4aKgK5hhQwdv3Q1pz4liOFJs5NPaASmmt9zwheFOz99baJkngay3aNDnSB-zzfv9tH0QKYyMWaGR7Y8-fBkau2F7wU_viVP57o0h7L_kxgxuPrellE_7pav_790E5zEcNtYpMjzUhzhBsv8SbOPQ8S3B44biW4LXdOEyG_Uklh3gCm8VpmRCWPR620TEroHtLZ08SFObWZmLwEbB3qPH_1JJJ4g8hUi-jc_pDKMQ8_mBPR6Jmhv7hYHwyYxsyG1Bluq_bPRMYZMbZXN7v5jKVbPSgrPNHod0rqqD5A_A52KbQlxSrNeBUf67pSS3myhvizP9wdAjbjhtuc2FYsFAipfbU-8hHcsTWW0PZmfE1aUmw9nWRTRgAE1NcXp6Y6z-bq4RqKcYimIyaL9iWe2qo=w480-h480-s-no?authuser=0" alt="error"></a>
+      </div>
+      <div class="hover-underline-animation">
+        <p>Shopping Cart<span id="CartNavitemsNumber"> (0)</span></p>
+      </div>
+      <div class="hover-underline-animation">
+        <p>Try At Home Cart<span> (0)</span></p>
+      </div>
+    </div>
+    </div>
+
+  <div class="one">
+   
+    <p>Total <span id="quantitytotal">(0) </span>:</p>
+    <p id="total"> <span id="cart-total">0</span></p>
+  </div>
+  
+  <div>
+    <div id="cont">
+
+    </div>
+    <div id="checkout">
+      <div id="apply">
+        <p>Apply Coupon </p>
+          <p>></p>
+      </div>
+      <div id="pin">
+       <p> Check Delivery Date</p>
+       <p>Enter Pincode</p>
+      </div>
+      <p>Order Summary</p>
+      <div id="totaldetails">
+      <div>
+        <p>Coupon Discount</p>
+        <p>Apply Coupon</p>
+        </div>
+        <div>
+        <p>Delivery Charge (Standard)</p>
+        <p>FREE</p>
+        </div>
+        <div>
+        <p>TOTAL COST </p>
+        <p id="checkouttotal">0</p>
+        </div>
+      </div>
+      <div>
+       <button>Checkout Securely</button>
+       </div>
+    </div>
+    </div>
+    <div class="samecolor">
+      <div class="footer">
+          <div id="one">
+              <h6>Know Your Jewellery</h6>
+              <p>DIAMOND GUIDE</p>
+              <p>JEWELLERY GUIDE</p>
+              <p>GEMSTONES GUIDE</p>
+              <p>GOLD RATE</p>
+              <p>DIGITAL GOLD</p>
+          </div>
+          <div id="two">
+              <h6>Aurum Jewels Advantage</h6>
+              <p>15-DAY RETURNS</p>
+              <p>FREE SHIPPING</p>
+              <p>FINANCING OPTIONS</p>
+              <p>OLD GOLD EXCHANGE</p>
+          </div>
+          <div id="three">
+              <h6>Customer Service</h6>
+              <p>RETURN POLICY</p>
+              <p>ORDER STATUS</p>
+          </div>
+          <div id="four">
+              <h6>About Us</h6>
+              <p>OUR STORY</p>
+              <p>PRESS</p>
+              <p>BLOG</p>
+              <p>CAREERS</p>
+          </div>
+           <div id="five">
+              <h6>Contact Us</h6>
+              <div id="contactlogos">
+                  <div id="contactlogos1">
+                  <img src="https://cdn-icons-png.flaticon.com/512/483/483947.png" alt="error">
+              </div>
+              <div id="contactlogos1">
+                  <img src="https://cdn-icons-png.flaticon.com/512/589/589708.png" alt="error">
+              </div>
+              <div id="contactlogos1">
+                  <img src="https://cdn-icons-png.flaticon.com/512/1384/1384023.png" alt="error">
+              </div>
+          </div>
+              <p>24x7 Enquiry Support(ALL DAYS)</p>
+              <p>General: <a href>Contactus@Aurumjewels.com</a> </p>
+              <p>Corporate:<a href>B2B@Aurumjewels.com</a> </p>
+              <p>HR: <a href>Careers@Aurumjewels.com</a> </p>
+              <p>Greivance: <a href>Click Here</a> </p>
+              <button>Find a Store</button>
+              </div>
+          </div>
+          <div class="socials">
+              <div>
+              <a href><img src="https://cdn-icons-png.flaticon.com/512/20/20837.png" alt="error"></a>
+              </div>
+              <div>
+              <a href><img src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png" alt="error"></a>
+              </div>
+              <div>
+              <a href><img src="https://cdn-icons-png.flaticon.com/512/466/466953.png" alt="error"></a>
+              </div>
+              <div>
+              <a href><img src="https://cdn-icons-png.flaticon.com/512/10124/10124356.png" alt="error"></a>
+              </div>
+              <div>
+              <a href><img src="https://cdn-icons-png.flaticon.com/512/665/665212.png" alt="error"></a>
+              </div>
+          </div>
+          <div class="payments">
+              <div class="app">
+                  <p>Download the Aurum Jewels App</p>
+                  <div id="store">
+                      <div><a href="">Google Play</a> </div>
+                      <div><a href="">App Store</a> </div>
+                  </div>
+              </div>
+              <div class="visa">
+                  <div>
+                    <a href=""><img src="https://cdn-icons-png.flaticon.com/512/5968/5968219.png" alt="error"></a>
+                  </div>
+                  <div>
+                     <a href=""><img src="https://cdn-icons-png.flaticon.com/512/10096/10096351.png" alt="error"></a>
+                  </div>
+                  <div>
+                    <a href="" ><img src="https://cdn-icons-png.flaticon.com/512/10101/10101223.png" alt="error"></a>
+                  </div>
+                  <div>
+                     <a href=""><img src="https://cdn-icons-png.flaticon.com/512/196/196566.png" alt="error"></a>
+                  </div>
+                  <div>
+                     <a href=""><img src="https://cdn-icons-png.flaticon.com/512/39/39223.png" alt="error"></a>
+                  </div>
+                  <div>
+                    <a href="" ><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMGqW8hK-LWUO4kxFgYiyvAPfAasV0p7qL6NGpkS3U&s" alt="error"></a>
+                  </div>
+              </div>
+              </div>
+          </div>
+         
+</body>
+<script>
+  switchTexts();
+
+
+
+function switchTexts() {
+  const texts = ["Aurum Jewels -A Tanishq Parternship", "Introducing CaratLane PoP! Plan your purchase  <a href=''> here</a>"]; // array of texts to switch between
+  let currentTextIndex = 0; // index of the current text
+  const textElement = document.getElementById("text"); // get the text element
+
+  setInterval(() => {
+    currentTextIndex = (currentTextIndex + 1) % texts.length; // increment currentTextIndex and wrap around if it exceeds the array length
+    textElement.style.animation = "slide-down 1s forwards"; // animate the text sliding down
+    setTimeout(() => {
+      textElement.innerHTML = texts[currentTextIndex]; // set the HTML content to the new text
+      textElement.style.animation = ""; // reset the animation
+      const linkElement = textElement.querySelector("a"); // get the anchor element
+      if (linkElement) {
+        linkElement.style.color = "pink"; // set the color of the anchor text to red
+      }
+    }, 1000); // wait for the slide-down animation to complete before changing the text
+  }, 3000); // switch texts every 2 seconds
+}
+    let cont=document.getElementById("cont");
+    let total=document.getElementById("cart-total");
+    let amount=document.getElementById("quantitytotal");
+    let checkouttotal=document.getElementById("checkouttotal");
+   let CartNavitemsNumber=document.getElementById("CartNavitemsNumber");
+
+    let HOMEPAGEDATA=localStorage.getItem("homepagedata")
+    if(HOMEPAGEDATA==null){
+        HOMEPAGEDATA=[]
+    }
+    else{
+        HOMEPAGEDATA=JSON.parse(HOMEPAGEDATA);
+    }
+
+   let TEMP;
+   //I ONLY WANT THE BELOW TO HAPPEN WHEN THE USER LOGS OUT NOT ANY OTHER TIME (when homepage data gets empty so it needs to cinatantly be checking home page data)
+//    window.addEventListener("load", (event) => {
+//     TEMP=[];
+//     localStorage.setItem("temp", JSON.parse)
+//   //console.log("page is fully loaded");
+// });
+
+// let count; 
+// window.addEventListener('storage', () => {
+//   let CHECK=JSON.parse(localStorage.getItem("homepagedata"));
+//   let CHECK2= JSON.parse(localStorage.getItem("temp"))
+//   //console.log(CHECK)
+//   if(CHECK.length!=0){
+//      count=0
+//      //console.log(count)
+//   }
+//   //only need below to happen when user logs out, not again and again meaning if the homedata was full and then got emptied only happen then
+//   if(CHECK.length==0 && CHECK2.length!=0){ // will empty temp only when user logs out and temp has something in it 
+//     count++;
+//     // console.log(count)
+//     if(count==1){
+//     console.log("gone") //this is checking mutltiple times i only want it to run once but keep checking 
+//     CHECK2=[];
+//     localStorage.setItem("temp",JSON.stringify(CHECK2))
+//     display(CHECK2)
+//   }
+// }
+//   else{
+//     console.log(CHECK)
+//     console.log(CHECK2)
+//     console.log("not working")
+//     //console.log(JSON.parse(CHECK))
+//   }
+// });
+    if(HOMEPAGEDATA.length!=0){
+    let CART=JSON.parse(localStorage.getItem("cart")) || []
+    display(CART);
+    }
+    else{
+        
+        TEMP=JSON.parse(localStorage.getItem("temp")) || []
+        display(TEMP);
+        //console.log(TEMP[0].title)
+    }
+//it will either get called on temp or cart depending on homedata length
+//if it is cart i need to only select those objects which have email key value equal to homedata[1]
+//wishlist works like a remove button but whatever gets removed gets added in wishlist with email unique 
+
+    function display(data){
+        cont.innerHTML="";
+
+for(let i=0; i<data.length; i++){
+    if(HOMEPAGEDATA.length!=0 && data[i].email!=HOMEPAGEDATA[1]){
+        continue;
+    }
+    let div=document.createElement("div");
+  let div1=document.createElement("div");
+  let div2=document.createElement("div");
+  let div3=document.createElement("div");
+  let img=document.createElement("img");
+  let h2= document.createElement("h2");
+  let h3=document.createElement("h3");
+  let p1= document.createElement("p");
+  let p2=document.createElement("p")
+  let btn1= document.createElement("button");
+  let span= document.createElement("span");
+  let btn2= document.createElement("button");
+  let btn3= document.createElement("button");
+  let btn4= document.createElement("button");
+
+  img.setAttribute("src", data[i].image);
+  h2.innerText= data[i].title;
+  h3.innerText=data[i].id;
+  p1.innerText="Check Delivery Date";
+  num=Number(data[i].price).toLocaleString("en-IN")
+  // total.innerText=`₹ ${num}`
+  //     checkouttotal.innerText=` ₹ ${sum}` //
+  p2.innerText=`₹ ${num}`;
+  btn1.innerText="+";
+  span.innerText=data[i].quantity; //default
+  btn2.innerText="-";
+  btn3.innerText="Remove";
+  btn4.innerText="Add to Wishlist"
+//append img in one div and remove add to wishlist in one div and the rest in another div (3 divs in total that will append to cont)
+  // div.append(img, h2, h3, p1, p2, btn1, span, btn2, btn3, btn4);
+  div1.append(img);
+  div2.append(h2, p1, p2, btn1, span, btn2)
+  div3.append(btn3,btn4)
+  div.append(div1,div2,div3);
+  cont.append(div)
+//cost total quantity appending change 
+  btn4.addEventListener("click",()=>{
+    //each user will have a diff wishlist
+  })
+  btn1.addEventListener("click", function(){
+    data[i].quantity++;
+    span.innerText=data[i].quantity ; //TOTAL
+   sum(data);
+   if(HOMEPAGEDATA.length!=0){
+    localStorage.setItem("cart", JSON.stringify(data));
+    }
+    else{
+        
+      localStorage.setItem("temp", JSON.stringify(data));
+        //console.log(TEMP[0].title)
+    }
+  })
+  btn2.addEventListener("click", function(){
+    if(data[i].quantity>1){
+    data[i].quantity--
+    }
+    //update local storage also for both cart and temp
+  
+    span.innerText=data[i].quantity; 
+    sum(data);
+    if(HOMEPAGEDATA.length!=0){
+    localStorage.setItem("cart", JSON.stringify(data));
+    }
+    else{
+        
+      localStorage.setItem("temp", JSON.stringify(data));
+        //console.log(TEMP[0].title)
+    }
+   
+  })
+  btn3.addEventListener("click", function(){
+    let filter2= data.filter((ele)=>{
+      return ele.id!= data[i].id;
+    })
+    display(filter2);
+    localStorage.setItem("cart", JSON.stringify(filter2))
+  })
+  
+  sum(data);
+      }
+      
+    }
+
+    function sum(data){
+      let sum=0
+      let quantitytotal=0;
+      for(let m=0; m<data.length; m++){
+        if(HOMEPAGEDATA.length!=0){
+          if(data[m].email==HOMEPAGEDATA[1]){
+            sum= sum+(data[m].quantity*data[m].price);
+          }
+        }
+        else{
+        sum= sum+(data[m].quantity*data[m].price);
+        }
+        
+        if(HOMEPAGEDATA.length!=0){
+          if(data[m].email==HOMEPAGEDATA[1]){
+            quantitytotal=quantitytotal+Number((data[m].quantity));
+          }
+        }
+        else{
+        quantitytotal=quantitytotal+Number((data[m].quantity));
+
+        }
+       //console.log(data[m].quantity) //not working//working now fixed it  
+      }
+      //let num=Number(data[i].price).toLocaleString("en-US")
+      sum=sum.toLocaleString("en-IN")
+      total.innerText=`₹ ${sum}`
+      checkouttotal.innerText=` ₹ ${sum}` //
+     // console.log(quantitytotal)
+      if(quantitytotal==1){
+        amount.innerText=`(${quantitytotal} item) `
+        CartNavitemsNumber.innerText=` (${quantitytotal})`
+      }
+      else{
+      amount.innerText=`(${quantitytotal} items) `
+      CartNavitemsNumber.innerText= ` (${quantitytotal})`
+      }
+    }
+    
+    
+</script>
+</html>
+
+<!-- IF I LOGOUT ITS NOT GETTING REFRESHED 
+IF I RELOAD IT SWITCHED TO TEMP INSTEAD OF EMPTYING TEMP
+once i logout i want window to reload and i want temp to be empty 
+-->
+
+<!-- <div>
+  <div>total savecart</div> dont have to append this part
+<img>
+title
+quantity
+check delievery date
+price
+remove button
+move to wishlist button
+</div>
+<div>
+<div>apply coupon</div>
+<div>check delievery date</div>
+<div>order summary
+  total
+
+</div>
+<div>checkout securely</div>
+</div> -->

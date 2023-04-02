@@ -1,8 +1,8 @@
 # innocent-glove-9480
-1. Project's Title
+1. Project's Title:
 This is an HTML & CSS project with a bit of JavaScript. It is a clone of the caratlane Webpage.
 
-2. Project Description
+2. Project Description:
 Caratlane is an e-commerce website that sells jewelery made of various types of precious metals. I named my clone site Aurum jewels as the symbol for gold (Au) comes from the Latin ‘aurum', as I noticed their site has mostly gold jewelery and I wanted the name I picked to highlight that.
 
 3. Functionalities implemented:

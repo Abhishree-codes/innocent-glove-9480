@@ -37,7 +37,7 @@ incrementing and decrementing updates cart total amount
 can also delete items from cart
 any changes made to cart are saved for users 
 
-4.Functionalities I would like to implement in the future:
+4. Functionalities I would like to implement in the future:
 -CSS animations (I tried implementing drop down on select menus and sliding animations but understanding the code was hard.)
 -Add functionalities to individual product page.
 -Add media queries 

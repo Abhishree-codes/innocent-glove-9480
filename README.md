@@ -48,3 +48,5 @@ any changes made to cart are saved for users
 -Add checkout page wih functionality
 -session storage for anyone who's not logged in 
 -multifilter functionality
+
+Deployed Link: https://sparkly-malabi-79f4d0.netlify.app/

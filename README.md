@@ -11,7 +11,7 @@ This is an HTML & CSS project with a bit of JavaScript. It is a clone of the car
 
 ## Deployment
 
-This Website is live and deployed on Netlify.
+This Website is live and deployed on Netlify. <br/>
 [![netflify](https://img.shields.io/badge/netflify-blue?style=for-the-badge&logo=netflify&logoColor=white)](https://moonlit-sundae-1ea951.netlify.app/)
 
 

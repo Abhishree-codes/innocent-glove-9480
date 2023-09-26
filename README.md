@@ -42,14 +42,14 @@ This Website is live and deployed on Netlify. <br/>
 
 # Features
 
--Register Page:
+- Register Page:
 Takes user data and stores it in local storage to be used.
 Doesn't allow same email to be registered.
 I implemented password requirements.
 Asks for OTP and verifies with the OTP stored in LS.
 Option to redirect to login.
 
--Login Pages:
+- Login Pages:
 Check for correct details with the respect to LS and redirect to home page.
 
 - Nav Bar

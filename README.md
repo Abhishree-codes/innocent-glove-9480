@@ -14,7 +14,7 @@ This is an HTML & CSS project with a bit of JavaScript. It is a clone of the car
 This Website is live and deployed on Netlify.
 
 
-[![netflify](https://moonlit-sundae-1ea951.netlify.app/)
+[![netflify](https://moonlit-sundae-1ea951.netlify.app/)]
 
 # Pages
 

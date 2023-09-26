@@ -22,7 +22,7 @@ This Website is live and deployed on Netlify. <br/>
 
 ## Landing Page 
 
-![landing page](https://res.cloudinary.com/dsixdct6o/image/upload/v1695692084/Screenshot_2023-09-26_at_07.04.00_gbwpkx.png)
+![landing page](https://res.cloudinary.com/dsixdct6o/image/upload/v1695692803/Screenshot_2023-09-26_at_06.16.53_copy_v0epkb.png)
 
 ## Login Page 
 
